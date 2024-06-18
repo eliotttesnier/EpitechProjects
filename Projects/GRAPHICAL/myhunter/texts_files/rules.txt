@@ -1,0 +1,24 @@
+|| RULES ||
+
+- Shoot ducks to gain score and increase your streak
+- If a duck reaches the side, you lose a life
+- You can gain an exta life by having a streak of 25+ (max 5 hearts)
+- If you miss your shot, your streak returns to 0
+- Your max streak and max score are both saved on your computer
+
+|| MENU ||
+- You can adjust the difficulty from BEGINNER to EXPERT
+- You can adjust music volume from 0 to 100
+- You can adjust sound effect volume from 0 to 100
+- You can play/resume the game by pressing 'Play' button
+- You can restart the game by pressing 'Restart' button
+- You can leave the game by pressing 'Leave' button
+- Your sound settings are saved on your computer
+
+|| USER INPUTS ||
+- any mouse button = shoot, click on buttons in menu
+- 'R' key = reload gun (when empty)
+- 'Escape' key = open/close menu
+
+|| LAST BUT NOT LEAST ||
+- Have fun

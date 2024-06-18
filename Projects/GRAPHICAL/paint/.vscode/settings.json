@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "my_paint_header.h": "c",
+        "typeinfo": "c",
+        "functional": "c"
+    }
+}
