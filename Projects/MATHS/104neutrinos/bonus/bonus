@@ -1,0 +1,118 @@
+#!/usr/bin/python3
+#
+##
+## EPITECH PROJECT, 2023
+## 104neutrinos
+## File description:
+## 104neutrinos
+##
+
+from sys import argv as argv
+from math import sqrt
+import matplotlib.pyplot as plt
+
+def verif_number(arg):
+    for element in arg:
+        if element < '0' or element > '9':
+            exit(84)
+
+def error_cases(ac, argv)->int:
+    if ac != 5:
+        exit(84)
+    for element in argv[1:]:
+        verif_number(element)
+
+def print_res():
+    print(f"    Number of values:    {nb_values:.2f}")
+    print(f"    Standard deviation:  {st_deviation:.2f}")
+    print(f"    Arithmetic mean:     {arit_mean:.2f}")
+    print(f"    Root mean square:    {root_mean_sq:.2f}")
+    print(f"    Harmonic mean:       {harmo_mean:.2f}\n")
+
+def neutrinos(arg):
+    global nb_values
+    global arit_mean
+    global harmo_mean
+    global st_deviation
+    global root_mean_sq
+    old_arit_mean = arit_mean
+
+    nb_values += 1
+    arit_mean = ((nb_values - 1) * arit_mean + int(arg)) / nb_values
+    harmo_mean = nb_values / (((nb_values - 1) / harmo_mean) + 1 / int(arg))
+    st_deviation = sqrt((1 / nb_values) * ((nb_values - 1) * ((st_deviation**2) + (old_arit_mean**2)) + (int(arg)**2)) - (arit_mean**2))
+    root_mean_sq = sqrt((st_deviation**2) + (arit_mean**2))
+    print_res()
+
+def actualise_lists():
+    global list_harmo
+    global list_arit
+    global list_dev
+    global list_nb
+    global list_root
+
+    list_harmo.append(harmo_mean)
+    list_arit.append(arit_mean)
+    list_dev.append(st_deviation)
+    list_nb.append(nb_values)
+    list_root.append(root_mean_sq)
+
+# def graph():
+#     plt.figure('Bonus', figsize=(20, 10))
+#     left_coordinates = [1,2,3]
+#     heights = [arit_mean, root_mean_sq, harmo_mean]
+#     bar_labels = ['Arithmetic mean (' + str(round(arit_mean, 2)) + ')','Root mean square (' + str(round(root_mean_sq, 2)) + ')','Harmonic mean (' + str(round(harmo_mean, 2)) + ')']
+#     plt.bar(left_coordinates,heights,tick_label=bar_labels,width=0.6,color=['red','black'])
+#     plt.xlabel('Means')
+#     plt.ylim(min(arit_mean - 50, root_mean_sq - 50, harmo_mean - 50), max(arit_mean + 50, root_mean_sq + 50, harmo_mean + 50))
+#     text = "Graph for " + str(nb_values) + " values with a standard deviation of " + str(round(st_deviation, 2))
+#     plt.title(text)
+#     plt.show()
+
+def graph_ar(list_nb, list2, text):
+    plt.figure('Bonus', figsize=(20, 10))
+    plt.xlabel('Number of values')
+    plt.ylabel(text)
+    plt.title(text)
+    plt.plot(list_nb, list2)
+    plt.ticklabel_format(useOffset=False)
+    plt.show()
+
+def arg_graph():
+    arg = input("Enter \"AR\" for aritmetic mean, \"HA\" for harmonic mean, \"RO\" for root mean square or \"DE\" for standard deviation: ")
+    if arg == "AR":
+        graph_ar(list_nb, list_arit, "Aritmetic mean")
+    elif arg == "HA":
+        graph_ar(list_nb, list_harmo, "Harmonic mean")
+    elif arg == "RO":
+        graph_ar(list_nb, list_root, "Root mean square")
+    elif arg == "DE":
+        graph_ar(list_nb, list_dev, "Standard deviation")
+    else:
+        print("Wrong argument")
+
+ac = len(argv)
+error_cases(ac, argv)
+nb_values = int(argv[1])
+arit_mean = int(argv[2])
+harmo_mean = int(argv[3])
+st_deviation = int(argv[4])
+root_mean_sq = sqrt((st_deviation**2) + (arit_mean**2))
+
+list_nb = [nb_values]
+list_arit = [arit_mean]
+list_harmo = [harmo_mean]
+list_dev = [st_deviation]
+list_root = [root_mean_sq]
+
+arg = input("Enter next value or END or GRAPH: ")
+while arg != "END":
+    if arg == 'GRAPH':
+        arg_graph()
+    else :
+        verif_number(arg)
+        neutrinos(arg)
+        actualise_lists()
+    arg = input("Enter next value or END or GRAPH: ")
+
+exit(0)

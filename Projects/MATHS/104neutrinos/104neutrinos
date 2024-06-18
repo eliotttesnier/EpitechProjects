@@ -1,0 +1,66 @@
+#!/usr/bin/python3
+#
+##
+## EPITECH PROJECT, 2023
+## 104neutrinos
+## File description:
+## 104neutrinos
+##
+
+from sys import argv as argv
+from math import sqrt
+
+def verif_number(arg):
+    for element in arg:
+        if element < '0' or element > '9':
+            exit(84)
+
+def error_cases(ac, argv)->int:
+    if ac != 5:
+        exit(84)
+    for element in argv[1:]:
+        verif_number(element)
+
+def print_res():
+    print(f"    Number of values:    {nb_values:.2f}")
+    print(f"    Standard deviation:  {st_deviation:.2f}")
+    print(f"    Arithmetic mean:     {arit_mean:.2f}")
+    print(f"    Root mean square:    {root_mean_sq:.2f}")
+    print(f"    Harmonic mean:       {harmo_mean:.2f}\n")
+
+def neutrinos(arg):
+    global nb_values
+    global arit_mean
+    global harmo_mean
+    global st_deviation
+    global root_mean_sq
+    old_arit_mean = arit_mean
+
+    nb_values += 1
+    arit_mean = ((nb_values - 1) * arit_mean + int(arg)) / nb_values
+    harmo_mean = nb_values / (((nb_values - 1) / harmo_mean) + 1 / int(arg))
+    st_deviation = sqrt((1 / nb_values) * ((nb_values - 1) * ((st_deviation**2) + (old_arit_mean**2)) + (int(arg)**2)) - (arit_mean**2))
+    root_mean_sq = sqrt((st_deviation**2) + (arit_mean**2))
+    print_res()
+
+ac = len(argv)
+error_cases(ac, argv)
+nb_values = int(argv[1])
+arit_mean = int(argv[2])
+harmo_mean = int(argv[3])
+st_deviation = int(argv[4])
+root_mean_sq = 0
+
+if st_deviation < 0:
+    exit(84)
+
+if harmo_mean == 0:
+    exit(84)
+
+arg = input("Enter next value: ")
+while arg != "END":
+    verif_number(arg)
+    neutrinos(arg)
+    arg = input("Enter next value: ")
+
+exit(0)

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "system_error": "c",
+        "103.h": "c",
+        "stdlib.h": "c"
+    }
+}

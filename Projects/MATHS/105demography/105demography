@@ -1,0 +1,188 @@
+#!/usr/bin/python3
+#
+##
+## EPITECH PROJECT, 2023
+## 105demogrpahy
+## File description:
+## 105demogrpahy
+##
+
+import csv
+from sys import argv as argv
+from math import sqrt
+import math
+
+def error_cases(ac, argv)->int:
+    if ac == 1:
+        exit(84)
+    for element in argv[1:] :
+        if len(element) != 3 :
+            exit(84)
+    error_cases2(argv)
+    return
+
+def error_cases2(argv) :
+    good = ["AFG", "ALB", "DZA", "ASM", "AND", "AGO", "ATG", "ARG", "ARM", "ABW", "AUS", "AUT", "AZE",
+            "BHS", "BHR", "BGD", "BRB", "BLR", "BEL", "BLZ", "BEN", "BMU", "BTN", "BOL", "BIH", "BWA", "BRA", "VGB", "BRN", "BGR", "BFA", "BDI",
+            "CPV", "KHM", "CMR", "CAN", "CYM", "CAF", "TCD", "CHI", "CHL", "CHN", "COL", "COM", "COD", "COG", "CRI", "CIV", "HRV", "CUB", "CUW", "CYP", "CZE",
+            "DNK", "DJI", "DMA", "DOM", "ECU", "EGY", "SLV", "GNQ", "ERI", "EST", "SWZ", "ETH", "FRO", "FJI", "FIN", "FRA", "PYF", "GAB", "GMB", "GEO", "DEU", "GHA",
+            "GIB", "GRC", "GRL", "GRD", "GUM", "GTM", "GIN", "GNB", "GUY", "HTI", "HND", "HKG", "HUN", "ISL", "IND", "IND", "IDN", "IRN", "IRQ", "IRL", "IMN", "ISR",
+            "ITA", "JAM", "JPN", "JOR", "KAZ", "KEN", "KIR", "PRK", "KOR", "XKX", "KWT", "KGZ", "LAO", "LVA", "LBN", "LSO", "LBR", "LBY", "LIE", "LTU", "LUX", "MAC",
+            "MDG", "MWI", "MYS", "MDV", "MLI", "MLT", "MHL", "MRT", "MUS", "MEX", "FSM", "MDA", "MCO", "MNG", "MNE", "MAR", "MOZ", "MMR", "NAM", "NRU", "NPL", "NLD",
+            "NCL", "NZL", "NIC", "NER", "NGA", "MKD", "MNP", "NOR", "OMN", "PAK", "PLW", "PAN", "PNG", "PRY", "PER", "PHL", "POL", "PRT", "PRI", "QAT", "ROU", "RUS",
+            "RWA", "WSM", "SMR", "STP", "SAU", "SEN", "SRB", "SYC", "SLE", "SGP", "SXM", "SVK", "SVN", "SLB", "SOM", "ZAF", "SSD", "ESP", "LKA", "KNA", "LCA", "MAF",
+            "VCT", "SDN", "SUR", "SWE", "CHE", "SYR", "TJK", "TZA", "THA", "TLS", "TGO", "TON", "TTO", "TUN", "TUR", "TKM", "TCA", "TUV", "UGA", "UKR", "ARE", "GBR",
+            "USA", "URY", "UZB", "VUT", "VEN", "VNM", "VIR", "PSE", "YEM", "ZMB", "ZWE", "ARB", "CSS", "CEB", "EAR", "EAS", "EAP", "TEA", "EMU", "ECS", "ECA", "TEC",
+            "EUU", "FCS", "HPC", "HIC", "IBD", "IBT", "IDB", "IDX", "IDA", "LTE", "LCN", "LAC", "TLA", "LDC", "LMY", "LIC", "LMC", "MEA", "MNA", "TMN", "MIC", "NAC",
+            "INX", "OED", "OSS", "PSS", "PST", "PRE", "SST", "SAS", "TSA", "SSF", "SSA", "TSS", "UMC", "WLD"]
+    for element in argv[1:] :
+        temp = False
+        for country in good :
+            if element == country :
+                temp = True
+        if temp == False :
+            exit(84)
+    return
+
+def scan_file(argv):
+    file = open('105demography_data.csv')
+    csvreader = csv.reader(file)
+    rows = []
+    for row in csvreader:
+        for element in argv :
+            try:
+                row[0].index(element)
+            except ValueError:
+                0 == 0
+            else:
+                rows.append(row[0].split(";"))
+    print(f"Country:", end = "")
+    for element in rows :
+        print(f" {element[0]}", end = "")
+        if element != rows[-1] :
+            print(",", end = "")
+    print("")
+    file.close
+    return (rows)
+
+def get_data(rows) :
+    data = []
+    for element in rows :
+        data.append(element[2:])
+    return data
+
+def pop_sum(data) :
+    res = 0
+    for element in data :
+        for number in element :
+            res += int(number)
+    return res * 0.000001
+
+def pop_csum(data) :
+    ret = 0
+    for i in range(0, 58) :
+        t = 0
+        for j in range(0, len(data)) :
+            t += float(int(data[j][i]) * 0.000001)
+        ret = ret + t**2
+    return ret
+
+def csum(data) :
+    res = 0
+    for i in range(0, 58) :
+        t = 0
+        for j in range(0, len(data)) :
+            t += float(int(data[j][i]) * 0.000001)
+        res += (i + 1960) * t
+    return res
+
+def calc_by(data, years) :
+    ret = csum(data) * 58
+    ret -= pop_sum(data) * sum(years)
+    ret = ret / (58 * 229355925 - (sum(years)**2))
+    return ret
+
+def calc_ay(data, years) :
+    ret = pop_sum(data) * 229355925
+    ret = ret - (sum(years) * csum(data))
+    ret = ret / (58 * 229355925 - (sum(years)**2))
+    return ret
+
+def yrms_dev(data, years, a, b) :
+    ret = 0
+    for i in range(0, 58) :
+        total = 0
+        for j in range(0, len(data)) :
+            total += float(int(data[j][i]) * 0.000001)
+        ret += (total - (b * (1960 + i) + a))**2
+    return sqrt(ret / 58)
+
+def xrms_dev(data, years, a, b) :
+    ret = 0
+    for i in range(0, 58) :
+        total = 0
+        for j in range(0, len(data)) :
+            total += float(int(data[j][i]) * 0.000001)
+        ret += ((((i + 1960) - a) / b) - total)**2 / 58
+    return sqrt(ret)
+
+def calc_bx(data, years) :
+    ret = 58 * csum(data) - sum(years) * pop_sum(data)
+    ret = ret / (58 * pop_csum(data) - pop_sum(data)**2)
+    return ret
+
+def calc_ax(data, years) :
+    ret = sum(years) * pop_csum(data)
+    ret = ret - (pop_sum(data) * csum(data))
+    ret = ret / (58 * pop_csum(data) - pop_sum(data)**2)
+    return ret
+
+def corel(data, years, a, b) :
+    mean, left, right, temp = pop_sum(data) / 58, 0, 0, 0
+    for i in range(0, 58) :
+        temp = 0
+        left += ((b * (i + 1960) + a) - mean)**2
+        for element in data :
+            temp += float(int(element[i]) * 0.000001)
+        right += (temp - mean)**2
+    return sqrt(left / right)
+
+def fit1(data, years) :
+    a = calc_ay(data, years)
+    b = calc_by(data, years)
+    root_dev = yrms_dev(data, years, a, b)
+    print("Fit1")
+    if a < 0 :
+        print("    Y = %.2f X - %.2f" % (round(b, 2), round(a * -1, 2)))
+    elif a >= 0 :
+        print("    Y = %.2f X + %.2f" % (round(b, 2), round(a, 2)))
+    print(f"    Root-mean-square deviation: %.2f" % (round(root_dev, 2)))
+    print(f"    Population in 2050: %.2f" % (round(b * 2050 + a, 2)))
+
+def fit2(data, years) :
+    a = calc_ax(data, years)
+    b = calc_bx(data, years)
+    root_dev = xrms_dev(data, years, a, b)
+    print("Fit2")
+    if a > 0 :
+        print("    X = %.2f Y + %.2f" % (round(b, 2), round(a, 2)))
+    elif a <= 0 :
+        print("    X = %.2f Y - %.2f" % (round(b, 2), round(a * -1, 2)))
+    print(f"    Root-mean-square deviation: %.2f" % (round(root_dev, 2)))
+    print(f"    Population in 2050: %.2f" % (round((2050 - a) / b, 2)))
+
+ac = len(argv)
+error_cases(ac, argv)
+rows = scan_file(argv)
+rows.sort()
+data = get_data(rows)
+years = []
+for i in range(1960, 2018) :
+    years.append(i)
+fit1(data, years)
+fit2(data, years)
+cor = corel(data, years, calc_ay(data, years), calc_by(data, years))
+print("Correlation: %.4f" % (cor))
+
+#print(data)
+exit(0)
