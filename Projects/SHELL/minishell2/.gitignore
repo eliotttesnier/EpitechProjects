@@ -1,0 +1,5 @@
+binaries
+*.o
+mysh
+*.out
+tempo.c
