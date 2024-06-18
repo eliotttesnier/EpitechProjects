@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "unistd.h": "c",
+        "redirect.h": "c",
+        "criterion.h": "c",
+        "dump_hashtable.C": "cpp",
+        "secured.h": "c"
+    }
+}

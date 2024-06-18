@@ -1,0 +1,5 @@
+add DEVICE a, WIRE b, WIRE c, WIRE d, SENSOR e, SENSOR f, WIRE a, WIRE salut
+disp
+sort TYPE -r
+disp
+exit

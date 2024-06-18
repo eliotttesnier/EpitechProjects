@@ -1,0 +1,37 @@
+	Create hashtable test:
+		- size 0 / 1
+		- huge size
+
+	delete hashtable test:
+		- empty table
+		- huge table
+		- multiple data at one index
+		- one in index
+
+	insert hash test:
+		- insert in an empty table
+		- insert in a multiple data index
+		- insert with the same key
+
+	delete hash test:
+		- delete in an empty table
+		- delete a non existing key
+		- delete a key
+		- delete in a multiple data index key
+
+	search hash test:
+		- search in an empty table
+		- search a non existing key
+		- search a key
+		- search a multiple data index key
+
+	dump test:
+		- empty table
+		- multiple data at one index
+		- one in index
+		- Huge table
+
+	hash function test:
+		- two almost identical keys
+		- empty key
+		- really huge key

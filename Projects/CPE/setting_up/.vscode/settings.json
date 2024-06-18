@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "fcntl.h": "c",
+        "my.h": "c",
+        "header.h": "c",
+        "stat.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "unistd.h": "c"
+    }
+}

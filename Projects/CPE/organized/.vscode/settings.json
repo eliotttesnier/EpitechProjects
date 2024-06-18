@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "shell.h": "c",
+        "sstream": "c",
+        "redirect.h": "c",
+        "cstdlib": "c"
+    }
+}
