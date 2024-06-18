@@ -1,0 +1,126 @@
+/*
+** EPITECH PROJECT, 2024
+** n4s
+** File description:
+** main
+*/
+
+#include "header.h"
+
+// float calc_multiplier(float front)
+// {
+//     if (front >= 1000)
+//         return (1);
+//     if (front < 1000 && front > 500)
+//         return (3);
+//     if (front < 500 && front > 200)
+//         return (4);
+//     return (6);
+// }
+
+float calc_speed(float front, float left, float right)
+{
+    (void)left;
+    (void)right;
+    if (front > 20000)
+        return (0.9);
+    if (front > 1000)
+        return (0.75);
+    return (0.3 / 1000 * front);
+}
+
+float calc_backwards(float left, float right, float front)
+{
+    char **arr;
+
+    dprintf(1, "GET_CURRENT_SPEED\n");
+    arr = str_to_array(get_output(), ":");
+    //dprintf(2, "%f\n", atof(arr[3]));
+    if (atof(arr[3]) < 12 && (front < 30 || right < 30 || left < 30))
+        return (-0.5);
+    free(arr);
+    return (0);
+}
+
+float calc_multiplier(float front)
+{
+    if (front < 500)
+        return (4);
+    return (1);
+}
+
+float calc_angle(char **arr)
+{
+    int max = 18;
+
+    for (int i = 3; arr[i] != NULL; i++) {
+        if (atof(arr[i]) > 1500) {
+            arr[i] = strdup("1500");
+        }
+    }
+    for (int i = 2 + 16; i >= 3; i--) {
+        if (atof(arr[i]) > atof(arr[max]))
+            max = i;
+    }
+    for (int i = 2 + 16; arr[i] != NULL; i++) {
+        if (atof(arr[i]) > atof(arr[max]))
+            max = i;
+    }
+    max = max - 3;
+    dprintf(2, "Direction la plus loins : %i\n", max);
+    dprintf(2, "angle : %f\n", -(float)((max + 1) - 16) / 16 * 0.4);
+    if (max + 1 == 16 || max + 1 == 17)
+        return (0);
+    return (-(float)((max + 1) - 16) / 16 * 0.4);
+}
+
+void watch_wall(float *speed, float *dir)
+{
+    // float multiplier = 1;
+    char **arr = NULL;
+    float front;
+
+    dprintf(1, "GET_INFO_LIDAR\n");
+    arr = str_to_array(get_output(), ":");
+    front = (atof(arr[18]) + atof(arr[19])) / 2;
+    *speed = calc_backwards(atof(arr[3]), atof(arr[34]), front);
+    // if (*speed == 0) {
+    //     if (atof(arr[18]) < 750 || atof(arr[19]) < 750)
+    //         *speed = 0.20;
+    //     else
+    //         *speed = 0.40;
+    // }
+    if (*speed == 0)
+        *speed = 0.5;
+    *dir = calc_angle(arr);
+    // multiplier = calc_multiplier(atof(arr[18]));
+    // if (atof(arr[3]) > atof(arr[34]))
+    //     *dir = 0.1 * multiplier;
+    // if (atof(arr[3]) < atof(arr[34]))
+    //     *dir = -0.1 * multiplier;
+    // if (ABS(atof(arr[3]) - atof(arr[34])) < 150) {
+    //     *dir = 0;
+    //     *speed = 0.75;
+    // }
+    if (*speed < 0)
+        *dir = 0;
+}
+
+int main(void)
+{
+    bool end = false;
+    float speed = 0.3;
+    float dir = 0.0;
+
+    start();
+    while (end == false) {
+        watch_wall(&speed, &dir);
+        direction(dir, &end);
+        if (end == true)
+            break;
+        forward(speed, &end);
+    }
+    forward(0.1, &end);
+    stop();
+    return (0);
+}
