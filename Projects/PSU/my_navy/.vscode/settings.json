@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "navy_header.h": "c",
+        "handler.C": "cpp",
+        "stdlib.h": "c",
+        "macro_header.h": "c"
+    }
+}

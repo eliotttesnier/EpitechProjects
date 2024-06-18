@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "ncurses.h": "c",
+        "my.h": "c",
+        "fcntl.h": "c"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "struct.h": "c",
+        "my.h": "c",
+        "dirent.h": "c",
+        "stdlib.h": "c",
+        "sysmacros.h": "c",
+        "fcntl.h": "c",
+        "stat.h": "c",
+        "stdio.h": "c",
+        "types.h": "c"
+    }
+}
