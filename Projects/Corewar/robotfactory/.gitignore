@@ -1,0 +1,9 @@
+testmain.c
+binary
+champions
+asm
+*.out
+*.cor
+*.o
+*.gcna
+*.gcda
