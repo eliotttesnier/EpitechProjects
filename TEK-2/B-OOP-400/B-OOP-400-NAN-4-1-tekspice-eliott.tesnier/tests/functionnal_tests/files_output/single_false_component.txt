@@ -1,0 +1,4 @@
+tick: 1
+input(s):
+output(s):
+  out: 0

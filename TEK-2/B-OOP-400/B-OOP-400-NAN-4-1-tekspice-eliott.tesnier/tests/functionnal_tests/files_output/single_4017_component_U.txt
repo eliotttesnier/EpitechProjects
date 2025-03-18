@@ -1,0 +1,17 @@
+tick: 1
+input(s):
+  in_0: U
+  in_1: U
+  in_r: U
+output(s):
+  out_0: U
+  out_1: U
+  out_2: U
+  out_3: U
+  out_4: U
+  out_5: U
+  out_6: U
+  out_7: U
+  out_8: U
+  out_9: U
+  out_s: U

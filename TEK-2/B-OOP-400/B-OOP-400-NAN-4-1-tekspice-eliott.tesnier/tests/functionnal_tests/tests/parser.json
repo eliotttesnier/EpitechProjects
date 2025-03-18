@@ -1,0 +1,172 @@
+{
+	"tests": [
+		{
+			"name": "No arguments",
+			"description": "Test the program with no arguments",
+			"input": "./nanotekspice",
+			"expected_output": "Usage: ./nanotekspice [filename]",
+			"expected_return": 84
+		},
+		{
+			"name": "Too many arguments",
+			"description": "Test the program with too many arguments",
+			"input": "./nanotekspice 1 2",
+			"expected_output": "Usage: ./nanotekspice [filename]",
+			"expected_return": 84
+		},
+		{
+			"name": "File not found",
+			"description": "Test the program with a non-existing file",
+			"input": "./nanotekspice tests/files/not_existing.nts",
+			"expected_output": "Error: could not open file.",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid file extension",
+			"description": "Test the program with a file with an invalid extension",
+			"input": "./nanotekspice tests/files/invalid_extension.txt",
+			"expected_output": "Error: invalid file extension.",
+			"expected_return": 84
+		},
+		{
+			"name": "Empty file",
+			"description": "Test the program with an empty file",
+			"input": "./nanotekspice tests/files/empty.nts",
+			"expected_output": "Error: empty file.",
+			"expected_return": 84
+		},
+		{
+			"name": "No chipset statement",
+			"description": "Test the program with a file with no chipsets statement",
+			"input": "./nanotekspice tests/files/no_chipset_statement.nts",
+			"expected_output": "Error: missing \".chipsets:\" statement.",
+			"expected_return": 84
+		},
+		{
+			"name": "Multiple chipset statements",
+			"description": "Test the program with a file with multiple chipset statements",
+			"input": "./nanotekspice tests/files/multiple_chipset_statement.nts",
+			"expected_output": "Error: multiple \".chipsets:\" statements.",
+			"expected_return": 84
+		},
+		{
+			"name": "No links statement",
+			"description": "Test the program with a file with no links statement",
+			"input": "./nanotekspice tests/files/no_links_statement.nts",
+			"expected_output": "Error: missing \".links:\" statement.",
+			"expected_return": 84
+		},
+		{
+			"name": "Multiple links statements",
+			"description": "Test the program with a file with multiple links statements",
+			"input": "./nanotekspice tests/files/multiple_links_statement.nts",
+			"expected_output": "Error: multiple \".links:\" statements.",
+			"expected_return": 84
+		},
+		{
+			"name": "No component",
+			"description": "Test the program with a file with no chipset",
+			"input": "./nanotekspice tests/files/no_components.nts",
+			"expected_output": "Error: no components found.",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid component format (no spaces)",
+			"description": "Test the program with a file with an invalid component format (no spaces)",
+			"input": "./nanotekspice tests/files/invalid_format.nts",
+			"expected_output": "Error: invalid component format.",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid type",
+			"description": "Test the program with a file with an invalid type",
+			"input": "./nanotekspice tests/files/invalid_type.nts",
+			"expected_output": "Error: unknown type: \"invalid\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Multiple components with the same name",
+			"description": "Test the program with a file with multiple components with the same name",
+			"input": "./nanotekspice tests/files/multiple_name.nts",
+			"expected_output": "Error: multiple components with the same name: \"in_1\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid name for a link",
+			"description": "Test the program with a file with an invalid name for a link",
+			"input": "./nanotekspice tests/files/invalid_name.nts",
+			"expected_output": "Error: unknown component: \"invalid\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid name for a link (2)",
+			"description": "Test the program with a file with an invalid name for a link (2)",
+			"input": "./nanotekspice tests/files/unknown_component.nts",
+			"expected_output": "Error: unknown component: \"invalid\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Empty component name",
+			"description": "Test the program with a file with an empty component name",
+			"input": "./nanotekspice tests/files/empty_component_name.nts",
+			"expected_output": "Error: invalid component format.",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid pin",
+			"description": "Test the program with a file with an invalid pin",
+			"input": "./nanotekspice tests/files/invalid_pin.nts",
+			"expected_output": "Error: invalid pin: \"100\" for component: \"in_1\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid pin 2",
+			"description": "Test the program with a file with an invalid pin 2",
+			"input": "./nanotekspice tests/files/invalid_2_pin.nts",
+			"expected_output": "Error: invalid pin: \"ab\" for component: \"gate\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Negative pin",
+			"description": "Test the program with a file with a negative pin",
+			"input": "./nanotekspice tests/files/negative_pin.nts",
+			"expected_output": "Error: invalid pin: \"-1\" for component: \"in_1\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Alphabetical pin",
+			"description": "Test the program with a file with an alphabetical pin",
+			"input": "./nanotekspice tests/files/alphabetical_pin.nts",
+			"expected_output": "Error: invalid pin: \"abc\" for component: \"in_1\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Out of range pin",
+			"description": "Test the program with a file with an out of range pin",
+			"input": "./nanotekspice tests/files/out_of_range_pin.nts",
+			"expected_output": "Error: invalid pin: \"999999999999999999999999\" for component: \"in_1\".",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid link format",
+			"description": "Test the program with a file with an invalid link format",
+			"input": "./nanotekspice tests/files/invalid_link_format.nts",
+			"expected_output": "Error: invalid link format.",
+			"expected_return": 84
+		},
+		{
+			"name": "Invalid link (No colon)",
+			"description": "Test the program with a file with an invalid link (No colon)",
+			"input": "./nanotekspice tests/files/no_colon.nts",
+			"expected_output": "Error: invalid link format (missing colon).",
+			"expected_return": 84
+		},
+		{
+			"name": "Valid file",
+			"description": "Test the program with a valid file",
+			"input": "echo \"exit\" | ./nanotekspice tests/files/valid.nts",
+			"expected_output": "ANYTHING",
+			"expected_return": 0
+		}
+    ]
+}

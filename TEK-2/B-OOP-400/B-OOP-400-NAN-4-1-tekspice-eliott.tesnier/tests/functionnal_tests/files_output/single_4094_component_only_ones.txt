@@ -1,0 +1,15 @@
+tick: 16
+input(s):
+  clock: 1
+  data: 1
+output(s):
+  out_0: 1
+  out_1: 1
+  out_2: 1
+  out_3: 1
+  out_4: 1
+  out_5: 1
+  out_6: 1
+  out_7: 1
+  out_qe: 1
+  out_qs: 1

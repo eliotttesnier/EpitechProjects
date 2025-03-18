@@ -1,0 +1,11 @@
+{
+    "output_folder": "tests/functionnal_tests/files_output/",
+    "tests_folder": "tests/functionnal_tests/tests/",
+    "files": [
+        "parser",
+        "elementary",
+        "special",
+        "gates",
+        "advanced"
+    ]
+}

@@ -1,0 +1,74 @@
+{
+	"tests": [
+		{
+			"name": "Single TRUE component",
+			"description": "Test the program with a single TRUE component",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/true.nts",
+			"expected_output": "FILE CONTENT - single_true_component.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single FALSE component",
+			"description": "Test the program with a single FALSE component",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/false.nts",
+			"expected_output": "FILE CONTENT - single_false_component.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single INPUT component (U)",
+			"description": "Test the program with a single INPUT component (initial state undefined)",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/input.nts",
+			"expected_output": "FILE CONTENT - single_input_component_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single INPUT component (0)",
+			"description": "Test the program with a single INPUT component (initial at 0)",
+			"input": "echo \"in=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/input.nts",
+			"expected_output": "FILE CONTENT - single_input_component_2.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single INPUT component (Eliott)",
+			"description": "Test the program with a single INPUT component (initial at Eliott)",
+			"input": "echo \"in=Eliott; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/input.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		},
+		{
+			"name": "Single OUTPUT component (U)",
+			"description": "Test the program with a single OUPUT component (initial state undefined)",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/output.nts",
+			"expected_output": "FILE CONTENT - single_output_component_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OUPUT component (0)",
+			"description": "Test the program with a single OUPUT component (initial at 0)",
+			"input": "echo \"in=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/output.nts",
+			"expected_output": "FILE CONTENT - single_output_component_2.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OUPUT component (Eliott)",
+			"description": "Test the program with a single OUPUT component (initial at Eliott)",
+			"input": "echo \"in=Eliott; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/output.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		},
+		{
+			"name": "Single CLOCK component (initial state)",
+			"description": "Test the program with a single CLOCK component before toggling",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/clock.nts",
+			"expected_output": "FILE CONTENT - single_clock_component_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Toggle CLOCK component",
+			"description": "Toggle clock and check output",
+			"input": "echo \"cl=0; simulate; display\" | ./nanotekspice tests/files/nts_single/clock.nts",
+			"expected_output": "FILE CONTENT - single_clock_component_2.txt",
+			"expected_return": 0
+		}
+    ]
+}

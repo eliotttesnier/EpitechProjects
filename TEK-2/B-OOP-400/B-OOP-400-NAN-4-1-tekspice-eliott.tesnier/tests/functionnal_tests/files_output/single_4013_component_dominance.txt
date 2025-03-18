@@ -1,0 +1,15 @@
+tick: 1
+input(s):
+  cl_1_clock: 1
+  cl_2_clock: 1
+  in_1_data: 0
+  in_1_reset: 1
+  in_1_set: 1
+  in_2_data: 0
+  in_2_reset: 1
+  in_2_set: 1
+output(s):
+  out_1_q: 1
+  out_1_qb: 1
+  out_2_q: 1
+  out_2_qb: 1

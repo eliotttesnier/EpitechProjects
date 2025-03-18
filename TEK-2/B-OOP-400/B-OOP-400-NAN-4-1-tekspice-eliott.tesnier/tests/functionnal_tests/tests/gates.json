@@ -1,0 +1,340 @@
+{
+	"tests": [
+		{
+			"name": "4001 - NOR Gate (U,U)",
+			"description": "Test a single NOR gate with both inputs set to 0",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "FILE CONTENT - single_4001_component_U_U.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4001 - NOR Gate (U,0)",
+			"description": "Test a single NOR gate with both inputs set to 0",
+			"input": "echo \"in_02=0; in_06=0; in_09=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "FILE CONTENT - single_4001_component_U_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4001 - NOR Gate (U,1)",
+			"description": "Test a single NOR gate with both inputs set to 0",
+			"input": "echo \"in_02=1; in_06=1; in_09=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "FILE CONTENT - single_4001_component_U_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4001 - NOR Gate (0,0)",
+			"description": "Test a single NOR gate with both inputs set to 0",
+			"input": "echo \"in_01=0; in_02=0; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "FILE CONTENT - single_4001_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4001 - NOR Gate (0,1)",
+			"description": "Test a single NOR gate with one input at 1",
+			"input": "echo \"in_01=0; in_02=1; in_05=0; in_06=1; in_08=0; in_09=1; in_12=0; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "FILE CONTENT - single_4001_component_0_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4001 - NOR Gate (1,0)",
+			"description": "Test a single NOR gate with one input at 1",
+			"input": "echo \"in_01=1; in_02=0; in_05=1; in_06=0; in_08=1; in_09=0; in_12=1; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "FILE CONTENT - single_4001_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4001 - NOR Gate (1,1)",
+			"description": "Test a single NOR gate with both inputs set to 1",
+			"input": "echo \"in_01=1; in_02=1; in_05=1; in_06=1; in_08=1; in_09=1; in_12=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "FILE CONTENT - single_4001_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4001 - NOR Gate (2,1)",
+			"description": "Test a single NOR gate with both inputs set to 1",
+			"input": "echo \"in_01=2; in_02=1; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4001.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		},
+		{
+			"name": "4011 - NAND Gate (U,U)",
+			"description": "Test a single NAND gate with both inputs unset",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "FILE CONTENT - single_4011_component_U_U.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4011 - NAND Gate (U,0)",
+			"description": "Test a single NAND gate with one input unset and the other set to 0",
+			"input": "echo \"in_02=0; in_06=0; in_09=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "FILE CONTENT - single_4011_component_U_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4011 - NAND Gate (U,1)",
+			"description": "Test a single NAND gate with one input unset and the other set to 1",
+			"input": "echo \"in_02=1; in_06=1; in_09=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "FILE CONTENT - single_4011_component_U_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4011 - NAND Gate (0,0)",
+			"description": "Test a single NAND gate with both inputs set to 0",
+			"input": "echo \"in_01=0; in_02=0; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "FILE CONTENT - single_4011_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4011 - NAND Gate (0,1)",
+			"description": "Test a single NAND gate with one input at 1",
+			"input": "echo \"in_01=0; in_02=1; in_05=0; in_06=1; in_08=0; in_09=1; in_12=0; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "FILE CONTENT - single_4011_component_0_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4011 - NAND Gate (1,0)",
+			"description": "Test a single NAND gate with one input at 1",
+			"input": "echo \"in_01=1; in_02=0; in_05=1; in_06=0; in_08=1; in_09=0; in_12=1; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "FILE CONTENT - single_4011_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4011 - NAND Gate (1,1)",
+			"description": "Test a single NAND gate with both inputs set to 1",
+			"input": "echo \"in_01=1; in_02=1; in_05=1; in_06=1; in_08=1; in_09=1; in_12=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "FILE CONTENT - single_4011_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4011 - NAND Gate (2,1)",
+			"description": "Test a single NAND gate with an invalid input value",
+			"input": "echo \"in_01=2; in_02=1; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4011.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		},
+		{
+			"name": "4030 - XOR Gate (U,U)",
+			"description": "Test a single XOR gate with both inputs unset",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "FILE CONTENT - single_4030_component_U_U.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4030 - XOR Gate (U,0)",
+			"description": "Test a single XOR gate with one input unset and the other set to 0",
+			"input": "echo \"in_02=0; in_06=0; in_09=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "FILE CONTENT - single_4030_component_U_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4030 - XOR Gate (U,1)",
+			"description": "Test a single XOR gate with one input unset and the other set to 1",
+			"input": "echo \"in_02=1; in_06=1; in_09=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "FILE CONTENT - single_4030_component_U_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4030 - XOR Gate (0,0)",
+			"description": "Test a single XOR gate with both inputs set to 0",
+			"input": "echo \"in_01=0; in_02=0; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "FILE CONTENT - single_4030_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4030 - XOR Gate (0,1)",
+			"description": "Test a single XOR gate with one input at 1",
+			"input": "echo \"in_01=0; in_02=1; in_05=0; in_06=1; in_08=0; in_09=1; in_12=0; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "FILE CONTENT - single_4030_component_0_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4030 - XOR Gate (1,0)",
+			"description": "Test a single XOR gate with one input at 1",
+			"input": "echo \"in_01=1; in_02=0; in_05=1; in_06=0; in_08=1; in_09=0; in_12=1; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "FILE CONTENT - single_4030_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4030 - XOR Gate (1,1)",
+			"description": "Test a single XOR gate with both inputs set to 1",
+			"input": "echo \"in_01=1; in_02=1; in_05=1; in_06=1; in_08=1; in_09=1; in_12=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "FILE CONTENT - single_4030_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4030 - XOR Gate (2,1)",
+			"description": "Test a single XOR gate with an invalid input value",
+			"input": "echo \"in_01=2; in_02=1; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4030.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		},
+		{
+			"name": "4069 - NOT Gate (U,U)",
+			"description": "Test a single NOT gate with both inputs unset",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "FILE CONTENT - single_4069_component_U_U.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4069 - NOT Gate (U,0)",
+			"description": "Test a single NOT gate with one input unset and the other set to 0",
+			"input": "echo \"in_03=0; in_09=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "FILE CONTENT - single_4069_component_U_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4069 - NOT Gate (U,1)",
+			"description": "Test a single NOT gate with one input unset and the other set to 1",
+			"input": "echo \"in_03=1; in_09=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "FILE CONTENT - single_4069_component_U_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4069 - NOT Gate (0,0)",
+			"description": "Test a single NOT gate with both inputs set to 0",
+			"input": "echo \"in_01=0; in_03=0; in_05=0; in_09=0; in_11=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "FILE CONTENT - single_4069_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4069 - NOT Gate (0,1)",
+			"description": "Test a single NOT gate with one input at 1",
+			"input": "echo \"in_01=0; in_03=1; in_05=0; in_09=1; in_11=0; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "FILE CONTENT - single_4069_component_0_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4069 - NOT Gate (1,0)",
+			"description": "Test a single NOT gate with one input at 1",
+			"input": "echo \"in_01=1; in_03=0; in_05=1; in_09=0; in_11=1; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "FILE CONTENT - single_4069_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4069 - NOT Gate (1,1)",
+			"description": "Test a single NOT gate with both inputs set to 1",
+			"input": "echo \"in_01=1; in_03=1; in_05=1; in_09=1; in_11=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "FILE CONTENT - single_4069_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4069 - NOT Gate (2,1)",
+			"description": "Test a single NOT gate with an invalid input value",
+			"input": "echo \"in_01=2; in_03=0; in_05=0; in_09=0; in_11=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4069.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		},
+		{
+			"name": "4071 - OR Gate (U,U)",
+			"description": "Test a single OR gate with both inputs unset",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "FILE CONTENT - single_4071_component_U_U.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4071 - OR Gate (U,0)",
+			"description": "Test a single OR gate with one input unset and the other set to 0",
+			"input": "echo \"in_02=0; in_06=0; in_09=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "FILE CONTENT - single_4071_component_U_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4071 - OR Gate (U,1)",
+			"description": "Test a single OR gate with one input unset and the other set to 1",
+			"input": "echo \"in_02=1; in_06=1; in_09=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "FILE CONTENT - single_4071_component_U_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4071 - OR Gate (0,0)",
+			"description": "Test a single OR gate with both inputs set to 0",
+			"input": "echo \"in_01=0; in_02=0; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "FILE CONTENT - single_4071_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4071 - OR Gate (0,1)",
+			"description": "Test a single OR gate with one input at 1",
+			"input": "echo \"in_01=0; in_02=1; in_05=0; in_06=1; in_08=0; in_09=1; in_12=0; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "FILE CONTENT - single_4071_component_0_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4071 - OR Gate (1,0)",
+			"description": "Test a single OR gate with one input at 1",
+			"input": "echo \"in_01=1; in_02=0; in_05=1; in_06=0; in_08=1; in_09=0; in_12=1; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "FILE CONTENT - single_4071_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4071 - OR Gate (1,1)",
+			"description": "Test a single OR gate with both inputs set to 1",
+			"input": "echo \"in_01=1; in_02=1; in_05=1; in_06=1; in_08=1; in_09=1; in_12=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "FILE CONTENT - single_4071_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4071 - OR Gate (2,1)",
+			"description": "Test a single OR gate with an invalid input value",
+			"input": "echo \"in_01=2; in_02=1; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4071.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		},
+		{
+			"name": "4081 - AND Gate (U,U)",
+			"description": "Test a single AND gate with both inputs unset",
+			"input": "echo \"simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "FILE CONTENT - single_4081_component_U_U.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4081 - AND Gate (U,0)",
+			"description": "Test a single AND gate with one input unset and the other set to 0",
+			"input": "echo \"in_02=0; in_06=0; in_09=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "FILE CONTENT - single_4081_component_U_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4081 - AND Gate (U,1)",
+			"description": "Test a single AND gate with one input unset and the other set to 1",
+			"input": "echo \"in_02=1; in_06=1; in_09=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "FILE CONTENT - single_4081_component_U_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4081 - AND Gate (0,0)",
+			"description": "Test a single AND gate with both inputs set to 0",
+			"input": "echo \"in_01=0; in_02=0; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "FILE CONTENT - single_4081_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4081 - AND Gate (0,1)",
+			"description": "Test a single AND gate with one input at 1",
+			"input": "echo \"in_01=0; in_02=1; in_05=0; in_06=1; in_08=0; in_09=1; in_12=0; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "FILE CONTENT - single_4081_component_0_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4081 - AND Gate (1,0)",
+			"description": "Test a single AND gate with one input at 1",
+			"input": "echo \"in_01=1; in_02=0; in_05=1; in_06=0; in_08=1; in_09=0; in_12=1; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "FILE CONTENT - single_4081_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4081 - AND Gate (1,1)",
+			"description": "Test a single AND gate with both inputs set to 1",
+			"input": "echo \"in_01=1; in_02=1; in_05=1; in_06=1; in_08=1; in_09=1; in_12=1; in_13=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "FILE CONTENT - single_4081_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "4081 - AND Gate (2,1)",
+			"description": "Test a single AND gate with an invalid input value",
+			"input": "echo \"in_01=2; in_02=1; in_05=0; in_06=0; in_08=0; in_09=0; in_12=0; in_13=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/4081.nts",
+			"expected_output": "Error: invalid value.",
+			"expected_return": 84
+		}
+    ]
+}

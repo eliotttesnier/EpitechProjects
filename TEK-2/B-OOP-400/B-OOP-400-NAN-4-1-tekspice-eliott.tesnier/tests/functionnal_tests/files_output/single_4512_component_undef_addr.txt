@@ -1,0 +1,17 @@
+tick: 1
+input(s):
+  enable: 0
+  in_0: 1
+  in_1: 0
+  in_2: 1
+  in_3: 0
+  in_4: 1
+  in_5: 0
+  in_6: 1
+  in_7: 0
+  in_a: U
+  in_b: 0
+  in_c: 1
+  inhibit: 0
+output(s):
+  out_data: U

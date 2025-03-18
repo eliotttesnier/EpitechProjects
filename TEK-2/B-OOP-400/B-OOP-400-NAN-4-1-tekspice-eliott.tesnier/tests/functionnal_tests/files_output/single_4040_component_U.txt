@@ -1,0 +1,17 @@
+tick: 1
+input(s):
+  cl_clock: U
+  in_reset: U
+output(s):
+  out_00: U
+  out_01: U
+  out_02: U
+  out_03: U
+  out_04: U
+  out_05: U
+  out_06: U
+  out_07: U
+  out_08: U
+  out_09: U
+  out_10: U
+  out_11: U

@@ -1,0 +1,9 @@
+*.o
+/B-OOP-400_nanotekspice
+nanotekspice
+*.vscode
+*.gcno
+*.gcda
+*.gcov
+unit_tests
+log.bin

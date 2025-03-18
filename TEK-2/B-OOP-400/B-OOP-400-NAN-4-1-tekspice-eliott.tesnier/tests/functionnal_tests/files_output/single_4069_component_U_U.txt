@@ -1,0 +1,15 @@
+tick: 1
+input(s):
+  in_01: U
+  in_03: U
+  in_05: U
+  in_09: U
+  in_11: U
+  in_13: U
+output(s):
+  out_02: U
+  out_04: U
+  out_06: U
+  out_08: U
+  out_10: U
+  out_12: U

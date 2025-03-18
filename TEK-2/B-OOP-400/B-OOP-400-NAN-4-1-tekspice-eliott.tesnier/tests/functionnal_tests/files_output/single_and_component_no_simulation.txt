@@ -1,0 +1,6 @@
+tick: 0
+input(s):
+  in_1: U
+  in_2: U
+output(s):
+  out: U

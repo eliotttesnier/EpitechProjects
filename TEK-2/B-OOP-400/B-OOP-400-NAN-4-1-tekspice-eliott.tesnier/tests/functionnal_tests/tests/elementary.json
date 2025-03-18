@@ -1,0 +1,179 @@
+{
+	"tests": [
+		{
+			"name": "Single AND component (No simulation)",
+			"description": "Test the program with a single AND component",
+			"input": "echo \"display; exit\" | ./nanotekspice tests/files/nts_single/and.nts",
+			"expected_output": "FILE CONTENT - single_and_component_no_simulation.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single AND component (0 0)",
+			"description": "Test the program with a single AND component (0 0)",
+			"input": "echo \"in_1=0; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/and.nts",
+			"expected_output": "FILE CONTENT - single_and_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single AND component (1 0)",
+			"description": "Test the program with a single AND component (1 0)",
+			"input": "echo \"in_1=1; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/and.nts",
+			"expected_output": "FILE CONTENT - single_and_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single AND component (1 1)",
+			"description": "Test the program with a single AND component (1 1)",
+			"input": "echo \"in_1=1; in_2=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/and.nts",
+			"expected_output": "FILE CONTENT - single_and_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single AND component (U U)",
+			"description": "Test the program with a single AND component (U U)",
+			"input": "echo \"in_1=U; in_2=U; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/and.nts",
+			"expected_output": "FILE CONTENT - single_and_component_u_u.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single AND component (U 0)",
+			"description": "Test the program with a single AND component (U 0)",
+			"input": "echo \"in_1=U; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/and.nts",
+			"expected_output": "FILE CONTENT - single_and_component_u_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single AND component (U 1)",
+			"description": "Test the program with a single AND component (U 1)",
+			"input": "echo \"in_1=U; in_2=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/and.nts",
+			"expected_output": "FILE CONTENT - single_and_component_u_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OR component (No simulation)",
+			"description": "Test the program with a single OR component",
+			"input": "echo \"display; exit\" | ./nanotekspice tests/files/nts_single/or.nts",
+			"expected_output": "FILE CONTENT - single_or_component_no_simulation.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OR component (0 0)",
+			"description": "Test the program with a single OR component (0 0)",
+			"input": "echo \"in_1=0; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/or.nts",
+			"expected_output": "FILE CONTENT - single_or_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OR component (1 0)",
+			"description": "Test the program with a single OR component (1 0)",
+			"input": "echo \"in_1=1; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/or.nts",
+			"expected_output": "FILE CONTENT - single_or_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OR component (1 1)",
+			"description": "Test the program with a single OR component (1 1)",
+			"input": "echo \"in_1=1; in_2=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/or.nts",
+			"expected_output": "FILE CONTENT - single_or_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OR component (U U)",
+			"description": "Test the program with a single OR component (U U)",
+			"input": "echo \"in_1=U; in_2=U; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/or.nts",
+			"expected_output": "FILE CONTENT - single_or_component_u_u.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OR component (U 0)",
+			"description": "Test the program with a single OR component (U 0)",
+			"input": "echo \"in_1=U; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/or.nts",
+			"expected_output": "FILE CONTENT - single_or_component_u_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single OR component (U 1)",
+			"description": "Test the program with a single OR component (U 1)",
+			"input": "echo \"in_1=U; in_2=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/or.nts",
+			"expected_output": "FILE CONTENT - single_or_component_u_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single XOR component (No simulation)",
+			"description": "Test the program with a single XOR component",
+			"input": "echo \"display; exit\" | ./nanotekspice tests/files/nts_single/xor.nts",
+			"expected_output": "FILE CONTENT - single_xor_component_no_simulation.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single XOR component (0 0)",
+			"description": "Test the program with a single XOR component (0 0)",
+			"input": "echo \"in_1=0; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/xor.nts",
+			"expected_output": "FILE CONTENT - single_xor_component_0_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single XOR component (1 0)",
+			"description": "Test the program with a single XOR component (1 0)",
+			"input": "echo \"in_1=1; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/xor.nts",
+			"expected_output": "FILE CONTENT - single_xor_component_1_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single XOR component (1 1)",
+			"description": "Test the program with a single XOR component (1 1)",
+			"input": "echo \"in_1=1; in_2=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/xor.nts",
+			"expected_output": "FILE CONTENT - single_xor_component_1_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single XOR component (U U)",
+			"description": "Test the program with a single XOR component (U U)",
+			"input": "echo \"in_1=U; in_2=U; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/xor.nts",
+			"expected_output": "FILE CONTENT - single_xor_component_u_u.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single XOR component (U 0)",
+			"description": "Test the program with a single XOR component (U 0)",
+			"input": "echo \"in_1=U; in_2=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/xor.nts",
+			"expected_output": "FILE CONTENT - single_xor_component_u_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single XOR component (U 1)",
+			"description": "Test the program with a single XOR component (U 1)",
+			"input": "echo \"in_1=U; in_2=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/xor.nts",
+			"expected_output": "FILE CONTENT - single_xor_component_u_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single NOT component (No simulation)",
+			"description": "Test the program with a single NOT component",
+			"input": "echo \"display; exit\" | ./nanotekspice tests/files/nts_single/not.nts",
+			"expected_output": "FILE CONTENT - single_not_component_no_simulation.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single NOT component (0)",
+			"description": "Test the program with a single NOT component (0)",
+			"input": "echo \"in=0; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/not.nts",
+			"expected_output": "FILE CONTENT - single_not_component_0.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single NOT component (1)",
+			"description": "Test the program with a single NOT component (1)",
+			"input": "echo \"in=1; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/not.nts",
+			"expected_output": "FILE CONTENT - single_not_component_1.txt",
+			"expected_return": 0
+		},
+		{
+			"name": "Single NOT component (U)",
+			"description": "Test the program with a single NOT component (U)",
+			"input": "echo \"in=U; simulate; display; exit\" | ./nanotekspice tests/files/nts_single/not.nts",
+			"expected_output": "FILE CONTENT - single_not_component_u.txt",
+			"expected_return": 0
+		}
+    ]
+}

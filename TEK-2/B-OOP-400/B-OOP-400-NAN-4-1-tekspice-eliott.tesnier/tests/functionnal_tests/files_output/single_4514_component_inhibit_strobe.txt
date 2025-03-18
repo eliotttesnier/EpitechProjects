@@ -1,0 +1,25 @@
+tick: 1
+input(s):
+  in_0: U
+  in_1: U
+  in_2: U
+  in_3: U
+  inhibit: 1
+  strobe: 1
+output(s):
+  out_00: 0
+  out_01: 0
+  out_02: 0
+  out_03: 0
+  out_04: 0
+  out_05: 0
+  out_06: 0
+  out_07: 0
+  out_08: 0
+  out_09: 0
+  out_10: 0
+  out_11: 0
+  out_12: 0
+  out_13: 0
+  out_14: 0
+  out_15: 0
