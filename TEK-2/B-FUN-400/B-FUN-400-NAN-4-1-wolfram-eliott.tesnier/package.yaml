@@ -1,0 +1,30 @@
+name: wolfram
+version: 0.1.0.0
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Validator
+    - Error
+    - Config
+    - Rules
+
+executables:
+  wolfram:
+    main: Main.hs
+    source-dirs: src
+    ghc-options:
+    - -Wall
+    - -Wcompat
+    dependencies:
+    - wolfram
+
+tests:
+  wolfram-test:
+    main: test.hs
+    source-dirs: tests
+    dependencies:
+    - wolfram
+    - hspec >= 2.7.1

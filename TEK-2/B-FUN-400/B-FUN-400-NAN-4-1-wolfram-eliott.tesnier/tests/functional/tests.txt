@@ -1,0 +1,281 @@
+Name: No arguments
+Description: Test the program with no arguments
+Input: ./wolfram
+Output: Error: No arguments provided.
+Value: 84
+
+Name: Invalid flag
+Description: Test the program with an invalid flag
+Input: ./wolfram -a
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -rule (No rule provided)
+Description: Test the program with no rule provided
+Input: ./wolfram --lines 20
+Output: Error: -rule is mandatory.
+Value: 84
+
+Name: -rule (Invalid rule)
+Description: Test the program with an invalid rule
+Input: ./wolfram --rule 500
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -rule (Invalid rule negative)
+Description: Test the program with an invalid rule
+Input: ./wolfram --rule -1
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -rule (Invalid rule alphabetical)
+Description: Test the program with an invalid rule (alphabetical)
+Input: ./wolfram --rule a
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -rule (No value)
+Description: Test the program with no value provided
+Input: ./wolfram --rule
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -lines (No value)
+Description: Test the program with no value provided
+Input: ./wolfram --rule 30 --lines
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -lines (Invalid value)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines a
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -lines (Invalid value negative)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines -1
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -start (No value)
+Description: Test the program with no value provided
+Input: ./wolfram --rule 30 --lines 20 --start
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -start (Invalid value)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines 20 --start a
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -start (Invalid value negative)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines 20 --start -1
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -move (No value)
+Description: Test the program with no value provided
+Input: ./wolfram --rule 30 --lines 20 --move
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -move (Invalid value)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines 20 --move a
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -window (No value)
+Description: Test the program with no value provided
+Input: ./wolfram --rule 30 --lines 20 --window
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -window (Invalid value 0)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines 20 --window 0
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -window (Invalid value negative)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines 20 --window -1
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -window (Invalid value)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines 20 --window a
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: -window (Invalid value)
+Description: Test the program with an invalid value
+Input: ./wolfram --rule 30 --lines 20 --window 1.5
+Output: Error: Invalid arguments.
+Value: 84
+
+Name: Rule 30 Lines 50
+Description: Test the program with rule 30 and 50 lines
+Input: ./wolfram --rule 30 --lines 50
+Output: FILE CONTENT - rule_30_lines_50.txt
+Value: 0
+
+Name: Rule 90 Lines 50
+Description: Test the program with rule 90 and 50 lines
+Input: ./wolfram --rule 90 --lines 50
+Output: FILE CONTENT - rule_90_lines_50.txt
+Value: 0
+
+Name: Rule 110 Lines 50
+Description: Test the program with rule 110 and 50 lines
+Input: ./wolfram --rule 110 --lines 50
+Output: FILE CONTENT - rule_110_lines_50.txt
+Value: 0
+
+Name: Rule 30 Lines 50 Move 50
+Description: Test the program with rule 30, 50 lines and move 50
+Input: ./wolfram --rule 30 --lines 50 --move 50
+Output: FILE CONTENT - rule_30_lines_50_move_50.txt
+Value: 0
+
+Name: Rule 90 Lines 50 Move 50
+Description: Test the program with rule 90, 50 lines and move 50
+Input: ./wolfram --rule 90 --lines 50 --move 50
+Output: FILE CONTENT - rule_90_lines_50_move_50.txt
+Value: 0
+
+Name: Rule 110 Lines 50 Move 50
+Description: Test the program with rule 110, 50 lines and move 50
+Input: ./wolfram --rule 110 --lines 50 --move 50
+Output: FILE CONTENT - rule_110_lines_50_move_50.txt
+Value: 0
+
+Name: Rule 30 Lines 50 Move -50
+Description: Test the program with rule 30, 50 lines and move -50
+Input: ./wolfram --rule 30 --lines 50 --move -50
+Output: FILE CONTENT - rule_30_lines_50_move_-50.txt
+Value: 0
+
+Name: Rule 90 Lines 50 Move -50
+Description: Test the program with rule 90, 50 lines and move -50
+Input: ./wolfram --rule 90 --lines 50 --move -50
+Output: FILE CONTENT - rule_90_lines_50_move_-50.txt
+Value: 0
+
+Name: Rule 110 Lines 50 Move -50
+Description: Test the program with rule 110, 50 lines and move -50
+Input: ./wolfram --rule 110 --lines 50 --move -50
+Output: FILE CONTENT - rule_110_lines_50_move_-50.txt
+Value: 0
+
+Name: Rule 30 Lines 50 Start 50
+Description: Test the program with rule 30, 50 lines and start 50
+Input: ./wolfram --rule 30 --lines 50 --start 50
+Output: FILE CONTENT - rule_30_lines_50_start_50.txt
+Value: 0
+
+Name: Rule 90 Lines 50 Start 50
+Description: Test the program with rule 90, 50 lines and start 50
+Input: ./wolfram --rule 90 --lines 50 --start 50
+Output: FILE CONTENT - rule_90_lines_50_start_50.txt
+Value: 0
+
+Name: Rule 110 Lines 50 Start 50
+Description: Test the program with rule 110, 50 lines and start 50
+Input: ./wolfram --rule 110 --lines 50 --start 50
+Output: FILE CONTENT - rule_110_lines_50_start_50.txt
+Value: 0
+
+Name: Rule 30 Lines 50 Window 150
+Description: Test the program with rule 30, 50 lines and window 150
+Input: ./wolfram --rule 30 --lines 50 --window 150
+Output: FILE CONTENT - rule_30_lines_50_window_150.txt
+Value: 0
+
+Name: Rule 90 Lines 50 Window 150
+Description: Test the program with rule 90, 50 lines and window 150
+Input: ./wolfram --rule 90 --lines 50 --window 150
+Output: FILE CONTENT - rule_90_lines_50_window_150.txt
+Value: 0
+
+Name: Rule 110 Lines 50 Window 150
+Description: Test the program with rule 110, 50 lines and window 150
+Input: ./wolfram --rule 110 --lines 50 --window 150
+Output: FILE CONTENT - rule_110_lines_50_window_150.txt
+Value: 0
+
+Name: Rule 30 Lines 50 Window 15
+Description: Test the program with rule 30, 50 lines, start 50 and window 15
+Input: ./wolfram --rule 30 --lines 50 --window 15
+Output: FILE CONTENT - rule_30_lines_50_window_15.txt
+Value: 0
+
+Name: Rule 90 Lines 50 Window 15
+Description: Test the program with rule 90, 50 lines, start 50 and window 15
+Input: ./wolfram --rule 90 --lines 50 --window 15
+Output: FILE CONTENT - rule_90_lines_50_window_15.txt
+Value: 0
+
+Name: Rule 110 Lines 50 Window 15
+Description: Test the program with rule 110, 50 lines, start 50 and window 15
+Input: ./wolfram --rule 110 --lines 50 --window 15
+Output: FILE CONTENT - rule_110_lines_50_window_15.txt
+Value: 0
+
+Name: Rule 30 Lines 75 Window 95 Move 13 Start 50
+Description: Test the program with rule 30, 75 lines, window 95, move 13 and start 50
+Input: ./wolfram --rule 30 --lines 75 --window 95 --move 13 --start 50
+Output: FILE CONTENT - rule_30_lines_75_window_95_move_13_start_50.txt
+Value: 0
+
+Name: Rule 90 Lines 75 Window 95 Move 13 Start 50
+Description: Test the program with rule 90, 75 lines, window 95, move 13 and start 50
+Input: ./wolfram --rule 90 --lines 75 --window 95 --move 13 --start 50
+Output: FILE CONTENT - rule_90_lines_75_window_95_move_13_start_50.txt
+Value: 0
+
+Name: Rule 110 Lines 75 Window 95 Move 13 Start 50
+Description: Test the program with rule 110, 75 lines, window 95, move 13 and start 50
+Input: ./wolfram --rule 110 --lines 75 --window 95 --move 13 --start 50
+Output: FILE CONTENT - rule_110_lines_75_window_95_move_13_start_50.txt
+Value: 0
+
+Name: Rule 30 Lines 500
+Description: Test the program with rule 30 and 500 lines
+Input: ./wolfram --rule 30 --lines 500
+Output: FILE CONTENT - rule_30_lines_500.txt
+Value: 0
+
+Name: Rule 90 Lines 500
+Description: Test the program with rule 90 and 500 lines
+Input: ./wolfram --rule 90 --lines 500
+Output: FILE CONTENT - rule_90_lines_500.txt
+Value: 0
+
+Name: Rule 110 Lines 500
+Description: Test the program with rule 110 and 500 lines
+Input: ./wolfram --rule 110 --lines 500
+Output: FILE CONTENT - rule_110_lines_500.txt
+Value: 0
+
+Name: Rule 30 Lines 500 Move 250 --start 250
+Description: Test the program with rule 30, 500 lines, move 250 and start 250
+Input: ./wolfram --rule 30 --lines 500 --move 250 --start 250
+Output: FILE CONTENT - rule_30_lines_500_move_250_start_250.txt
+Value: 0
+
+Name: Rule 90 Lines 500 Move 250 --start 250
+Description: Test the program with rule 90, 500 lines, move 250 and start 250
+Input: ./wolfram --rule 90 --lines 500 --move 250 --start 250
+Output: FILE CONTENT - rule_90_lines_500_move_250_start_250.txt
+Value: 0
+
+Name: Rule 110 Lines 500 Move 250 --start 250
+Description: Test the program with rule 110, 500 lines, move 250 and start 250
+Input: ./wolfram --rule 110 --lines 500 --move 250 --start 250
+Output: FILE CONTENT - rule_110_lines_500_move_250_start_250.txt
+Value: 0

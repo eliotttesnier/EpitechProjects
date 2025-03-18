@@ -1,0 +1,55 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           wolfram
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Validator
+      Error
+      Config
+      Rules
+  other-modules:
+      Main
+      Wolfram
+      Paths_wolfram
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable wolfram
+  main-is: Main.hs
+  other-modules:
+      Config
+      Error
+      Rules
+      Validator
+      Wolfram
+      Paths_wolfram
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat
+  build-depends:
+      base >=4.7 && <5
+    , wolfram
+  default-language: Haskell2010
+
+test-suite wolfram-test
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  other-modules:
+      Paths_wolfram
+  hs-source-dirs:
+      tests
+  build-depends:
+      base >=4.7 && <5
+    , hspec >=2.7.1
+    , wolfram
+  default-language: Haskell2010
