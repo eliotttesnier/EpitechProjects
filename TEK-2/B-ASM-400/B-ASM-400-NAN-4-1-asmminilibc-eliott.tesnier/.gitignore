@@ -1,0 +1,8 @@
+*.o
+main.c
+temp
+libasm.so
+*gcda
+*gcno
+unit_tests
+*.txt
