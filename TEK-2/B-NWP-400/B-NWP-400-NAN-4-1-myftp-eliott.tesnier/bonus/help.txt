@@ -1,0 +1,25 @@
+GREEN Available commands are:RESET 
+- YELLOW helpRESET : BLUE display this helpRESET 
+- YELLOW noopRESET : BLUE do nothingRESET 
+- YELLOW pwdRESET : BLUE display the current directoryRESET 
+- YELLOW lsRESET : BLUE list the content of the current directoryRESET 
+- YELLOW cd <dir>RESET : BLUE change the current directoryRESET 
+- YELLOW cdupRESET : BLUE go to the parent directoryRESET 
+- YELLOW rm <file>RESET : BLUE remove a fileRESET 
+- YELLOW cat <file>RESET : BLUE display the content of a fileRESET 
+- YELLOW get <file>RESET : BLUE download a fileRESET 
+- YELLOW touch <file>RESET : BLUE create a fileRESET 
+- YELLOW put <file>RESET : BLUE upload a fileRESET 
+- YELLOW whoRESET : BLUE display the connected usersRESET 
+- YELLOW whoamiRESET : BLUE display your usernameRESET 
+- YELLOW mkdir <dir>RESET : BLUE create a directoryRESET 
+- YELLOW rmdir <dir>RESET : BLUE remove a directoryRESET 
+- YELLOW rename <old> <new>RESET : BLUE rename a file or directoryRESET 
+- YELLOW mv <source> <dest>RESET : BLUE move a file or directoryRESET 
+- YELLOW cp <source> <dest>RESET : BLUE copy a fileRESET 
+- YELLOW copy <source> <dest>RESET : BLUE copy a fileRESET 
+- YELLOW size <file>RESET : BLUE display the size of a fileRESET 
+- YELLOW mdtm <file>RESET : BLUE display the last modification time of a fileRESET 
+- YELLOW quitRESET : BLUE close the connectionRESET 
+- YELLOW exitRESET : BLUE close the connectionRESET 
+- YELLOW byeRESET : BLUE close the connectionRESET 

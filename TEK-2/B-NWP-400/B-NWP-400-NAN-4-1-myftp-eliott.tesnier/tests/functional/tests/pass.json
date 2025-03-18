@@ -1,0 +1,32 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - PASS command (No USER before)",
+            "description": "Test the myftp server with a PASS command without a USER command before",
+            "input": "CLIENT - PASS",
+            "expected_output": "FILE CONTENT - pass_command_no_user.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PASS command (Not anonymous)",
+            "description": "Test the myftp server with a PASS command with a USER command before",
+            "input": "CLIENT - USER valid ; PASS",
+            "expected_output": "FILE CONTENT - pass_command_not_anonymous.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PASS command (Anonymous)",
+            "description": "Test the myftp server with a PASS command with a USER command before",
+            "input": "CLIENT - USER Anonymous ; PASS",
+            "expected_output": "FILE CONTENT - pass_command_anonymous.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PASS command (Already logged in)",
+            "description": "Test the myftp server with a PASS command with a USER command before",
+            "input": "CLIENT - USER Anonymous ; PASS ; PASS",
+            "expected_output": "FILE CONTENT - pass_command_already_logged_in.txt",
+            "expected_return": 0
+        }
+    ]
+}

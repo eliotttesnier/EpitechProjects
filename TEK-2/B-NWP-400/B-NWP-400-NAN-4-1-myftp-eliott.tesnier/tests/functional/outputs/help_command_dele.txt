@@ -1,0 +1,2 @@
+220 Service ready for new user.
+214 DELE <SP> <pathname> <CRLF> : Delete file

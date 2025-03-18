@@ -1,0 +1,25 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - USER command (No argument)",
+            "description": "Test the myftp server with a USER command",
+            "input": "CLIENT - USER",
+            "expected_output": "FILE CONTENT - user_command.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - USER command (Anonymous)",
+            "description": "Test the myftp server with a USER command with anonymous argument",
+            "input": "CLIENT - USER Anonymous",
+            "expected_output": "FILE CONTENT - user_command_valid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - USER command (Valid)",
+            "description": "Test the myftp server with a USER command with valid argument",
+            "input": "CLIENT - USER valid",
+            "expected_output": "FILE CONTENT - user_command_valid.txt",
+            "expected_return": 0
+        }
+    ]
+}

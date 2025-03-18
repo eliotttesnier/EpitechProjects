@@ -1,0 +1,35 @@
+# Object files
+*.o
+*.ko
+*.obj
+
+# Executables
+*.out
+myftp
+
+# Debug files
+*.dSYM/
+vgcore.*
+.gdb_history
+
+# Dependencies
+*.d
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Criterion
+*.gc*
+*.test
+tests/criterion/*
+unit_tests
+dummy.txt
+
+# IDE specific files
+.vscode/
+
+# Organizational
+orga

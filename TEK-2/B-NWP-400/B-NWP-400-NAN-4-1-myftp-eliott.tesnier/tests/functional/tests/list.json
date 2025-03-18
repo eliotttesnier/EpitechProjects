@@ -1,0 +1,32 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - LIST command (Not logged in)",
+            "description": "Test the myftp server with a LIST command",
+            "input": "CLIENT - LIST",
+            "expected_output": "FILE CONTENT - not_logged_in.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - LIST command (No PASV before)",
+            "description": "Test the myftp server with a LIST command",
+            "input": "CLIENT - USER Anonymous ; PASS ; LIST",
+            "expected_output": "FILE CONTENT - stor_command_no_pasv.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - LIST command (Invalid file/folder)",
+            "description": "Test the myftp server with a LIST command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PASV ; LIST invalid_file",
+            "expected_output": "FILE CONTENT - list_invalid_file.txt",
+            "expected_return": 0
+        },
+        {
+            "name":"REQUEST - LIST command (Invalid file/folder, past root)",
+            "description":"Test the myftp server with a LIST command",
+            "input":"CLIENT - USER Anonymous ; PASS ; PASV ; LIST ../../",
+            "expected_output":"FILE CONTENT - list_invalid_file.txt",
+            "expected_return":0
+        }
+    ]
+}

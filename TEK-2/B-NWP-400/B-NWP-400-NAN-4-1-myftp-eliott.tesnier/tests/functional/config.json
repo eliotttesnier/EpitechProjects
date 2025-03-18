@@ -1,0 +1,22 @@
+{
+    "output_folder": "tests/functional/outputs/",
+    "tests_folder": "tests/functional/tests/",
+    "files": [
+        "myftp",
+        "unknown",
+        "quit",
+        "noop",
+        "help",
+        "user",
+        "pass",
+        "pwd",
+        "cwd",
+        "cdup",
+        "dele",
+        "pasv",
+        "port",
+        "retr",
+        "stor",
+        "list"
+    ]
+}

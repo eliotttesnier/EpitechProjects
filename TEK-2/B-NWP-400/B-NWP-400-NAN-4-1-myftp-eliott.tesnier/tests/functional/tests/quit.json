@@ -1,0 +1,18 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - QUIT command",
+            "description": "Test the myftp server with a NOOP command",
+            "input": "CLIENT - QUIT",
+            "expected_output": "FILE CONTENT - quit_command.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - QUIT command with arguments",
+            "description": "Test the myftp server with a NOOP command with arguments",
+            "input": "CLIENT - QUIT 1 2 3",
+            "expected_output": "FILE CONTENT - quit_command.txt",
+            "expected_return": 0
+        }
+    ]
+}

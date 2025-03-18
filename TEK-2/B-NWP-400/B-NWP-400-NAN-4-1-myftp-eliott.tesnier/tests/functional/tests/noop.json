@@ -1,0 +1,18 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - NOOP command",
+            "description": "Test the myftp server with a NOOP command",
+            "input": "CLIENT - NOOP",
+            "expected_output": "FILE CONTENT - noop_command.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - NOOP command with arguments",
+            "description": "Test the myftp server with a NOOP command with arguments",
+            "input": "CLIENT - NOOP 1 2 3",
+            "expected_output": "FILE CONTENT - noop_command.txt",
+            "expected_return": 0
+        }
+    ]
+}

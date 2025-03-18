@@ -1,0 +1,2 @@
+220 Service ready for new user.
+500 Invalid username

@@ -1,0 +1,25 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - PASV command (Not logged in)",
+            "description": "Test the myftp server with a PASV command",
+            "input": "CLIENT - PASV",
+            "expected_output": "FILE CONTENT - not_logged_in.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PASV command (Valid)",
+            "description": "Test the myftp server with a PASV command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PASV",
+            "expected_output": "FILE CONTENT - pasv_command_valid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PASV command (With arguments)",
+            "description": "Test the myftp server with a PASV command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PASV 1 2 3",
+            "expected_output": "FILE CONTENT - pasv_command_valid.txt",
+            "expected_return": 0
+        }
+    ]
+}

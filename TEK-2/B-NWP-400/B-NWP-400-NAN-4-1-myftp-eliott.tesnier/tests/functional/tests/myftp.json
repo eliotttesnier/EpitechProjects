@@ -1,0 +1,46 @@
+{
+    "tests": [
+        {
+            "name": "No arguments",
+            "description": "Test the myftp binary with no arguments",
+            "input": "./myftp",
+            "expected_output": "Usage: ./myftp port path",
+            "expected_return": 84
+        },
+        {
+            "name": "Not enough arguments",
+            "description": "Test the myftp binary with not enough arguments",
+            "input": "./myftp 4242",
+            "expected_output": "Usage: ./myftp port path",
+            "expected_return": 84
+        },
+        {
+            "name": "Too many arguments",
+            "description": "Test the myftp binary with too many arguments",
+            "input": "./myftp 4242 ./ hello",
+            "expected_output": "Usage: ./myftp port path",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid port",
+            "description": "Test the myftp binary with an invalid port",
+            "input": "./myftp PORT ./",
+            "expected_output": "Invalid port number",
+            "expected_return": 84
+        },
+        {
+            "name": "Too long path",
+            "description": "Test the myftp binary with a too long path",
+            "input": "./myftp 4242 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "expected_output": "Path is too long",
+            "expected_return": 84
+        },
+        {
+            "name": "Not existing path",
+            "description": "Test the myftp binary with a not existing path",
+            "input": "./myftp 4242 ./not_existing",
+            "expected_output": "Invalid root pathFailed to initialize server",
+            "expected_return": 84
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - PORT command (Not logged in)",
+            "description": "Test the myftp server with a PORT command",
+            "input": "CLIENT - PORT",
+            "expected_output": "FILE CONTENT - not_logged_in.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PORT command (No argument)",
+            "description": "Test the myftp server with a PORT command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PORT",
+            "expected_output": "FILE CONTENT - port_command_invalid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PORT command (Valid)",
+            "description": "Test the myftp server with a PORT command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PORT 127,0,0,1,4,2",
+            "expected_output": "FILE CONTENT - port_command_valid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PORT command (Invalid IP)",
+            "description": "Test the myftp server with a PORT command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PORT 500,0,0,1,4,2",
+            "expected_output": "FILE CONTENT - port_command_invalid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PORT command (Invalid port)",
+            "description": "Test the myftp server with a PORT command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PORT 127,0,0,1,256,2",
+            "expected_output": "FILE CONTENT - port_command_invalid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PORT command (Invalid argument alphabetical)",
+            "description": "Test the myftp server with a PORT command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PORT 127,0,0,1,4,a",
+            "expected_output": "FILE CONTENT - port_command_invalid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PORT command (Invalid arguments)",
+            "description": "Test the myftp server with a PORT command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PORT hello",
+            "expected_output": "FILE CONTENT - port_command_invalid.txt",
+            "expected_return": 0
+        }
+    ]
+}

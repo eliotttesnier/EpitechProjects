@@ -1,0 +1,11 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - UNKNOWN command",
+            "description": "Test the myftp server with an unknown command",
+            "input": "CLIENT - UNKNOWN",
+            "expected_output": "FILE CONTENT - unknown_command.txt",
+            "expected_return": 0
+        }
+    ]
+}

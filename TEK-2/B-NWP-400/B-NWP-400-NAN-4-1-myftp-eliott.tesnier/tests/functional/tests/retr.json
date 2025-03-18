@@ -1,0 +1,46 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - RETR command (Not logged in)",
+            "description": "Test the myftp server with a RETR command",
+            "input": "CLIENT - RETR",
+            "expected_output": "FILE CONTENT - not_logged_in.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - RETR command (No argument)",
+            "description": "Test the myftp server with a RETR command",
+            "input": "CLIENT - USER Anonymous ; PASS ; RETR",
+            "expected_output": "FILE CONTENT - retr_command_no_argument.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - RETR command (No PASV before)",
+            "description": "Test the myftp server with a RETR command",
+            "input": "CLIENT - USER Anonymous ; PASS ; RETR dummy.txt",
+            "expected_output": "FILE CONTENT - retr_command_no_pasv.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - RETR command (Not existing file)",
+            "description": "Test the myftp server with a RETR command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PASV ; RETR not_existing",
+            "expected_output": "FILE CONTENT - retr_command_not_existing.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - RETR command (Not a file)",
+            "description": "Test the myftp server with a RETR command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PASV ; RETR src",
+            "expected_output": "FILE CONTENT - retr_command_not_existing.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - RETR command (Past root)",
+            "description": "Test the myftp server with a RETR command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PASV ; RETR ../",
+            "expected_output": "FILE CONTENT - retr_command_not_existing.txt",
+            "expected_return": 0
+        }
+    ]
+}

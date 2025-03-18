@@ -1,0 +1,53 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - CWD command (Not logged in)",
+            "description": "Test the myftp server with a CWD command",
+            "input": "CLIENT - CWD",
+            "expected_output": "FILE CONTENT - not_logged_in.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - CWD command (No argument)",
+            "description": "Test the myftp server with a CWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; CWD",
+            "expected_output": "FILE CONTENT - cwd_command_no_argument.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - CWD command (Not existing path)",
+            "description": "Test the myftp server with a CWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; CWD not_existing",
+            "expected_output": "FILE CONTENT - cwd_command_not_existing.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - CWD command (Valid)",
+            "description": "Test the myftp server with a CWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; CWD src",
+            "expected_output": "FILE CONTENT - cwd_command_valid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - CWD command (Invalid)",
+            "description": "Test the myftp server with a CWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; CWD ../",
+            "expected_output": "FILE CONTENT - cwd_command_invalid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - CWD command (Valid absolute)",
+            "description": "Test the myftp server with a CWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; CWD /src",
+            "expected_output": "FILE CONTENT - cwd_command_valid.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - CWD command (Invalid absolute)",
+            "description": "Test the myftp server with a CWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; CWD /../",
+            "expected_output": "FILE CONTENT - cwd_command_invalid.txt",
+            "expected_return": 0
+        }
+    ]
+}

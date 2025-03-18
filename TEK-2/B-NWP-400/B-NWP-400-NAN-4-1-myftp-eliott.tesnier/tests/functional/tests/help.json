@@ -1,0 +1,116 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - HELP command",
+            "description": "Test the myftp server with a HELP command",
+            "input": "CLIENT - HELP",
+            "expected_output": "FILE CONTENT - help_command.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (Unknown)",
+            "description": "Test the myftp server with a HELP command with an invalid argument",
+            "input": "CLIENT - HELP UNKNOWN",
+            "expected_output": "FILE CONTENT - help_command_unknown.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (USER)",
+            "description": "Test the myftp server with a HELP command with USER argument",
+            "input": "CLIENT - HELP USER",
+            "expected_output": "FILE CONTENT - help_command_user.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (PASS)",
+            "description": "Test the myftp server with a HELP command with PASS argument",
+            "input": "CLIENT - HELP PASS",
+            "expected_output": "FILE CONTENT - help_command_pass.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (PWD)",
+            "description": "Test the myftp server with a HELP command with PWD argument",
+            "input": "CLIENT - HELP PWD",
+            "expected_output": "FILE CONTENT - help_command_pwd.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (CWD)",
+            "description": "Test the myftp server with a HELP command with CWD argument",
+            "input": "CLIENT - HELP CWD",
+            "expected_output": "FILE CONTENT - help_command_cwd.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (CDUP)",
+            "description": "Test the myftp server with a HELP command with CDUP argument",
+            "input": "CLIENT - HELP CDUP",
+            "expected_output": "FILE CONTENT - help_command_cdup.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (DELE)",
+            "description": "Test the myftp server with a HELP command with DELE argument",
+            "input": "CLIENT - HELP DELE",
+            "expected_output": "FILE CONTENT - help_command_dele.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (PASV)",
+            "description": "Test the myftp server with a HELP command with PASV argument",
+            "input": "CLIENT - HELP PASV",
+            "expected_output": "FILE CONTENT - help_command_pasv.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (PORT)",
+            "description": "Test the myftp server with a HELP command with PORT argument",
+            "input": "CLIENT - HELP PORT",
+            "expected_output": "FILE CONTENT - help_command_port.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (RETR)",
+            "description": "Test the myftp server with a HELP command with RETR argument",
+            "input": "CLIENT - HELP RETR",
+            "expected_output": "FILE CONTENT - help_command_retr.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (STOR)",
+            "description": "Test the myftp server with a HELP command with STOR argument",
+            "input": "CLIENT - HELP STOR",
+            "expected_output": "FILE CONTENT - help_command_stor.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (LIST)",
+            "description": "Test the myftp server with a HELP command with LIST argument",
+            "input": "CLIENT - HELP LIST",
+            "expected_output": "FILE CONTENT - help_command_list.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (QUIT)",
+            "description": "Test the myftp server with a HELP command with QUIT argument",
+            "input": "CLIENT - HELP QUIT",
+            "expected_output": "FILE CONTENT - help_command_quit.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (HELP)",
+            "description": "Test the myftp server with a HELP command with HELP argument",
+            "input": "CLIENT - HELP HELP",
+            "expected_output": "FILE CONTENT - help_command_help.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - HELP command (NOOP)",
+            "description": "Test the myftp server with a HELP command with NOOP argument",
+            "input": "CLIENT - HELP NOOP",
+            "expected_output": "FILE CONTENT - help_command_noop.txt",
+            "expected_return": 0
+        }
+    ]
+}

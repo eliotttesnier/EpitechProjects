@@ -1,0 +1,2 @@
+220 Service ready for new user.
+332 Need USER first

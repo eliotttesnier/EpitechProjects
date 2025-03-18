@@ -1,0 +1,25 @@
+{
+    "tests": [
+        {
+            "name": "REQUEST - PWD command (Not logged in)",
+            "description": "Test the myftp server with a PWD command",
+            "input": "CLIENT - PWD",
+            "expected_output": "FILE CONTENT - not_logged_in.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PWD command (Root)",
+            "description": "Test the myftp server with a PWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PWD",
+            "expected_output": "FILE CONTENT - pwd_command_root.txt",
+            "expected_return": 0
+        },
+        {
+            "name": "REQUEST - PWD command (With arguments)",
+            "description": "Test the myftp server with a PWD command",
+            "input": "CLIENT - USER Anonymous ; PASS ; PWD 1 2 3",
+            "expected_output": "FILE CONTENT - pwd_command_root.txt",
+            "expected_return": 0
+        }
+    ]
+}

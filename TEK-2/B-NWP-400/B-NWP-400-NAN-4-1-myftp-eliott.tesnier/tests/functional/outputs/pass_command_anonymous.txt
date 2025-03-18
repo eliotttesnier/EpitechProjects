@@ -1,0 +1,3 @@
+220 Service ready for new user.
+331 Username okay, need password.
+230 User logged in, proceed.

@@ -1,0 +1,2 @@
+220 Service ready for new user.
+214 STOR <SP> <pathname> <CRLF> : Upload file
