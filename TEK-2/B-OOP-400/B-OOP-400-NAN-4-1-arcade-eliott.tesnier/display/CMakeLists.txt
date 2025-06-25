@@ -1,0 +1,5 @@
+add_subdirectory(SFML)
+add_subdirectory(SDL)
+add_subdirectory(allegro)
+add_subdirectory(ncurses)
+add_subdirectory(qt5)
