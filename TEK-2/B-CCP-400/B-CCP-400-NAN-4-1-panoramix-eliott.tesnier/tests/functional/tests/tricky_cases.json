@@ -1,0 +1,18 @@
+{
+    "tests": [
+        {
+            "name": "More refill than needed",
+            "description": "Test the program with more refill than needed",
+            "input": "./panoramix 2 5 2 6",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Not enough refill to finish fights",
+            "description": "Test the program with more refill than needed",
+            "input": "./panoramix 8 1 8 1",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        }
+    ]
+}

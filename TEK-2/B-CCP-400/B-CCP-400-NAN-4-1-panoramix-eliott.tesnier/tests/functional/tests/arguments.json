@@ -1,0 +1,53 @@
+{
+    "tests": [
+        {
+            "name": "No arguments",
+            "description": "Test the program with no arguments",
+            "input": "./panoramix",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "Not enough arguments",
+            "description": "Test the program without enough arguments",
+            "input": "./panoramix 5 5 5",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "Too much arguments",
+            "description": "Test the program with too much arguments",
+            "input": "./panoramix 5 5 5 5 5",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "Alphabetical arguments",
+            "description": "Test the program with alphabetical arguments",
+            "input": "./panoramix a b c d",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "Negative arguments",
+            "description": "Test the program with negative arguments",
+            "input": "./panoramix -5 -5 -5 -5",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "Zero arguments",
+            "description": "Test the program with zero arguments",
+            "input": "./panoramix 0 0 0 0",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "Valid arguments",
+            "description": "Test the program with decimal arguments",
+            "input": "./panoramix 3 5 3 1",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        }
+    ]
+}
