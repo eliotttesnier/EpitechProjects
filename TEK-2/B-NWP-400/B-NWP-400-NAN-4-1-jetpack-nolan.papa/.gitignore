@@ -1,0 +1,43 @@
+# Object files
+*.o
+*.ko
+*.obj
+
+# Executables
+*.out
+jetpack_client
+jetpack_server
+
+# Debug files
+*.dSYM/
+vgcore.*
+.gdb_history
+
+# Dependencies
+*.d
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Criterion
+*.gc*
+*.test
+tests/criterion/*
+unit_tests
+
+# IDE specific files
+.vscode/
+
+# Folder
+jetpack
+maps
+
+*.map
+*.mp4
+
+# Coding style reports
+coding-style-cpp-reports.log
+coding-style-reports.log

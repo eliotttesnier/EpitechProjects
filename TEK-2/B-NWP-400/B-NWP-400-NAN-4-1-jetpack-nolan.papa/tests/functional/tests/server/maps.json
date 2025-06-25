@@ -1,0 +1,46 @@
+{
+    "tests": [
+        {
+            "name": "SERVER: Map: File not found",
+            "description": "Test the server with no map",
+            "input": "./jetpack_server -p 4242 -m do_not_exist.map",
+            "expected_output": "Cannot open map file: do_not_exist.map",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Map: Invalid character in map",
+            "description": "Test the server with a map containing an invalid character",
+            "input": "./jetpack_server -p 4242 -m tests/functional/samples/invalid_char.map",
+            "expected_output": "Invalid map character detected: 'C'",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Map: Invalid line length",
+            "description": "Test the server with a map containing an invalid line length",
+            "input": "./jetpack_server -p 4242 -m tests/functional/samples/invalid_line_length.map",
+            "expected_output": "Invalid map: inconsistent line lengths",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Map: Empty line",
+            "description": "Test the server with a map containing an empty line",
+            "input": "./jetpack_server -p 4242 -m tests/functional/samples/empty_line.map",
+            "expected_output": "Invalid map: empty line detected",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Map: Not enough lines",
+            "description": "Test the server with a map containing not enough lines",
+            "input": "./jetpack_server -p 4242 -m tests/functional/samples/not_enough_lines.map",
+            "expected_output": "Invalid map dimensions: expected 10 lines, got 8",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Map: Too many lines",
+            "description": "Test the server with a map containing too many lines",
+            "input": "./jetpack_server -p 4242 -m tests/functional/samples/too_many_lines.map",
+            "expected_output": "Invalid map dimensions: expected 10 lines, got 12",
+            "expected_return": 84
+        }
+    ]
+}

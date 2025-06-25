@@ -1,0 +1,53 @@
+{
+    "tests": [
+        {
+            "name": "CLIENT: No arguments",
+            "description": "Test the client with no arguments",
+            "input": "./jetpack_client",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "CLIENT: Not enough arguments",
+            "description": "Test the client with not enough arguments",
+            "input": "./jetpack_client -p 4242",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "CLIENT: Invalid argument",
+            "description": "Test the client with an invalid argument",
+            "input": "./jetpack_client -p 4242 -h localhost -n",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "CLIENT: No data after -p",
+            "description": "Test the client with no data after -p",
+            "input": "./jetpack_client -p -h localhost -d",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "CLIENT: Invalid data after -p",
+            "description": "Test the client with invalid data after -p",
+            "input": "./jetpack_client -p abc -h localhost -d",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "CLIENT: No data after -h",
+            "description": "Test the client with no data after -h",
+            "input": "./jetpack_client -p 4242 -d -h",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "CLIENT: Invalid data after -h",
+            "description": "Test the client with invalid data after -h",
+            "input": "./jetpack_client -p 4242 -h abc",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "tests": [
+        {
+            "name": "SERVER: No arguments",
+            "description": "Test the server with no arguments",
+            "input": "./jetpack_server",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Not enough arguments",
+            "description": "Test the server with not enough arguments",
+            "input": "./jetpack_server -p 4242",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Invalid argument",
+            "description": "Test the server with an invalid argument",
+            "input": "./jetpack_server -p 4242 -m tests/functional/samples/basic.map -n",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: No data after -p",
+            "description": "Test the server with no data after -p",
+            "input": "./jetpack_server -p -m tests/functional/samples/basic.map -d",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Invalid data after -p",
+            "description": "Test the server with invalid data after -p",
+            "input": "./jetpack_server -p abc -m tests/functional/samples/basic.map -d",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: No data after -m",
+            "description": "Test the server with no data after -m",
+            "input": "./jetpack_server -p 4242 -d -m",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        },
+        {
+            "name": "SERVER: Invalid data after -m",
+            "description": "Test the server with invalid data after -m",
+            "input": "./jetpack_server -p 4242 -m -d",
+            "expected_output": "ANYTHING",
+            "expected_return": 84
+        }
+    ]
+}

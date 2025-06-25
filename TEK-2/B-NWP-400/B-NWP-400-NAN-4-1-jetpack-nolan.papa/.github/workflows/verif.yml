@@ -1,0 +1,128 @@
+name: Verif
+
+env:
+  SERVER: "jetpack_server"
+  CLIENT: "jetpack_client"
+
+on:
+  push
+
+jobs:
+
+  check_coding_style:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/epitech/coding-style-checker:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run coding style
+        run: check.sh $(pwd) $(pwd)
+
+      - name: Check error
+        run: |
+          while IFS= read -r line; do
+            file=$(echo "$line" | cut -d ':' -f 1)
+            line_number=$(echo "$line" | cut -d ':' -f 2)
+            error_message=$(echo "$line" | cut -d ':' -f 3-)
+            echo "::error file=$file,line=$line_number::Coding style error: $error_message"
+          done < coding-style-reports.log
+
+      - name: Exit if found
+        run: |
+          if [ -s coding-style-reports.log ]; then
+            echo "Coding style error"
+            exit 1
+          fi
+
+  check_cpplint_coding_style:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/epitech/coding-style-checker:latest
+    steps:
+      - name: checkout@v4
+        uses: actions/checkout@v4
+
+      - name: Dependencies
+        run: |
+          apt update && apt install -y python3-pip
+          pip install --break-system-packages cpplint
+          chmod +x styleChecker.sh
+
+      - name: Check Coding Style
+        run: |
+          ./styleChecker.sh
+
+      - name: Verify Coding Style
+        run: |
+          if [ -s coding-style-cpp-reports.log ]; then
+            echo "Coding style errors found. See coding-style-cpp-reports.log for details."
+            cat coding-style-cpp-reports.log
+            exit 1
+          else
+            echo "No coding style errors found."
+          fi
+
+  check_program_compilation:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: make server
+        timeout-minutes: 2
+        run: make server
+
+      - name: make client
+        timeout-minutes: 2
+        run: make client
+
+      - name: make
+        timeout-minutes: 2
+        run: make
+
+      - name: clean
+        run: make clean
+
+      - name: verif exec
+        run: |
+          if [ ! -x "$SERVER" ]; then
+            echo "$SERVER is not executable"
+            exit 1
+          fi
+          if [ ! -x "$CLIENT" ]; then
+            echo "$CLIENT is not executable"
+            exit 1
+          fi
+
+  run_functional_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker
+    needs: check_program_compilation
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build
+        run: make
+
+      - name: Run functional tests
+        run: |
+          make functional_tests
+          if [ $? -ne 0 ]; then
+            echo "Functional tests failed"
+            exit 1
+          fi
