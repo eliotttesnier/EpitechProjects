@@ -1,0 +1,143 @@
+{
+    "tests": [
+        {
+            "name": "Not enough arguments",
+            "description": "Test ./plazza with no arguments",
+            "input": ["./plazza"],
+            "expected_output": "FILE CONTENT - invalid_nb_args.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Not enough arguments",
+            "description": "Test ./plazza with 1 argument",
+            "input": ["./plazza", "2"],
+            "expected_output": "FILE CONTENT - invalid_nb_args.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Not enough arguments",
+            "description": "Test ./plazza with 2 arguments",
+            "input": ["./plazza", "2", "5"],
+            "expected_output": "FILE CONTENT - invalid_nb_args.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Too many arguments",
+            "description": "Test ./plazza with 4 arguments",
+            "input": ["./plazza", "2", "5", "2000", "extra"],
+            "expected_output": "FILE CONTENT - invalid_nb_args.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid multiplier (not a number)",
+            "description": "Test ./plazza with invalid multiplier",
+            "input": ["./plazza", "abc", "5", "2000"],
+            "expected_output": "FILE CONTENT - invalid_multiplier_nan.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid multiplier (negative)",
+            "description": "Test ./plazza with negative multiplier",
+            "input": ["./plazza", "-2", "5", "2000"],
+            "expected_output": "FILE CONTENT - invalid_multiplier_neg.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid cooks (not a number)",
+            "description": "Test ./plazza with invalid cooks per kitchen",
+            "input": ["./plazza", "2", "abc", "2000"],
+            "expected_output": "FILE CONTENT - invalid_cooks_nan.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid cooks (negative)",
+            "description": "Test ./plazza with negative cooks per kitchen",
+            "input": ["./plazza", "2", "-5", "2000"],
+            "expected_output": "FILE CONTENT - invalid_cooks_neg.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid cooks (zero)",
+            "description": "Test ./plazza with zero cooks per kitchen",
+            "input": ["./plazza", "2", "0", "2000"],
+            "expected_output": "FILE CONTENT - invalid_cooks_zero.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid regeneration time (not a number)",
+            "description": "Test ./plazza with invalid regeneration time",
+            "input": ["./plazza", "2", "5", "abc"],
+            "expected_output": "FILE CONTENT - invalid_reg_nan.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid regeneration time (negative)",
+            "description": "Test ./plazza with negative regeneration time",
+            "input": ["./plazza", "2", "5", "-2000"],
+            "expected_output": "FILE CONTENT - invalid_reg_neg.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid regeneration time (zero)",
+            "description": "Test ./plazza with zero regeneration time",
+            "input": ["./plazza", "2", "5", "0"],
+            "expected_output": "FILE CONTENT - invalid_reg_zero.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Valid arguments (integer multiplier) with exit",
+            "description": "Test ./plazza with valid integer multiplier and exit command",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["exit"]
+            },
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Valid arguments (decimal multiplier) with exit",
+            "description": "Test ./plazza with valid decimal multiplier and exit command",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "1.5", "5", "2000"],
+                "commands": ["exit"]
+            },
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Valid arguments (multiplier less than 1) with exit",
+            "description": "Test ./plazza with multiplier between 0 and 1 and exit command",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["exit"]
+            },
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Edge case (minimum values) with exit",
+            "description": "Test ./plazza with minimum acceptable values and exit command",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.01", "1", "1"],
+                "commands": ["exit"]
+            },
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Edge case (zero multiplier) with exit",
+            "description": "Test ./plazza with zero multiplier value and exit command",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0", "5", "2000"],
+                "commands": ["exit"]
+            },
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "pizzas" : [
+        {
+            "name": "Regina",
+            "id": "regina",
+            "ingredients": ["dough", "tomato", "gruyere", "ham"],
+            "cookingTime": 2
+        },
+        {
+            "name": "Margarita",
+            "id": "margarita",
+            "ingredients": ["dough", "tomato", "gruyere"],
+            "cookingTime": 1
+        },
+        {
+            "name": "Americana",
+            "id": "americana",
+            "ingredients": ["dough", "tomato", "gruyere", "steak"],
+            "cookingTime": 2
+        },
+        {
+            "name": "Fantasia",
+            "id": "fantasia",
+            "ingredients": ["dough", "tomato", "gruyere", "eggplant", "goat_cheese", "chief_love"],
+            "cookingTime": 4
+        },
+        {
+            "name": "Hawaiian",
+            "id": "hawaiian",
+            "ingredients": ["dough", "tomato", "gruyere", "ham", "pineapple"],
+            "cookingTime": 3
+        }
+    ]
+}

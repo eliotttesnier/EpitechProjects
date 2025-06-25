@@ -1,0 +1,64 @@
+{
+    "ingredients" : [
+        {
+            "name": "Dough",
+            "id": "dough"
+        },
+        {
+            "name": "Tomato",
+            "id": "tomato"
+        },
+        {
+            "name": "Gruyere",
+            "id": "gruyere"
+        },
+        {
+            "name": "Ham",
+            "id": "ham"
+        },
+        {
+            "name": "Mushrooms",
+            "id": "mushrooms"
+        },
+        {
+            "name": "Steak",
+            "id": "steak"
+        },
+        {
+            "name": "Eggplant",
+            "id": "eggplant"
+        },
+        {
+            "name": "Goat Cheese",
+            "id": "goat_cheese"
+        },
+        {
+            "name": "Chief Love",
+            "id": "chief_love"
+        },
+        {
+            "name": "Olives",
+            "id": "olives"
+        },
+        {
+            "name": "Chili",
+            "id": "chili"
+        },
+        {
+            "name": "Basil",
+            "id": "basil"
+        },
+        {
+            "name": "Onion",
+            "id": "onion"
+        },
+        {
+            "name": "Bell Pepper",
+            "id": "bell_pepper"
+        },
+        {
+            "name": "Pineapple",
+            "id": "pineapple"
+        }
+    ]
+}

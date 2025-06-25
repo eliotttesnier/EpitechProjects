@@ -1,0 +1,5 @@
+Error: Invalid cooks per kitchen value: abc. Must be a positive integer (>= 1)
+USAGE: ./plazza <multiplier> <cooks_per_kitchen> <regeneration_time_ms>
+  - multiplier: a float >= 0.0 (can be < 1.0 to divide cooking time)
+  - cooks_per_kitchen: a positive integer (>= 1)
+  - regeneration_time_ms: a positive integer (>= 1) in milliseconds

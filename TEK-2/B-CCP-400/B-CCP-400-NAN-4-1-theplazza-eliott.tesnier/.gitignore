@@ -1,0 +1,38 @@
+# Object files
+*.o
+*.ko
+*.obj
+*.log
+
+# Executables
+*.out
+plazza
+
+# Debug files
+*.dSYM/
+vgcore.*
+.gdb_history
+
+# Dependencies
+*.d
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Criterion
+*.gc*
+*.test
+tests/criterion/*
+unit_tests
+
+# IDE specific files
+.vscode/
+
+# Coding style report
+coding-style-cpp-reports.log
+
+# Coverage reports
+coverage_report/

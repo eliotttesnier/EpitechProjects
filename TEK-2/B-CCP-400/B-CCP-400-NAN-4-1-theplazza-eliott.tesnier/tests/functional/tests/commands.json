@@ -1,0 +1,158 @@
+{
+    "tests": [
+        {
+            "name": "Invalid pizza type",
+            "description": "Test with an invalid pizza type",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["pepperoni M x2", "exit"]
+            },
+            "expected_output": "CONTAINS - Unknown pizza type",
+            "expected_return": 0
+        },
+        {
+            "name": "Invalid pizza size",
+            "description": "Test with an invalid pizza size",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["regina XS x2", "exit"]
+            },
+            "expected_output": "CONTAINS - Invalid size",
+            "expected_return": 0
+        },
+        {
+            "name": "Invalid quantity (zero)",
+            "description": "Test with zero quantity",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["regina M x0", "exit"]
+            },
+            "expected_output": "CONTAINS - Invalid quantity",
+            "expected_return": 0
+        },
+        {
+            "name": "Invalid quantity (negative)",
+            "description": "Test with negative quantity",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["regina M x-5", "exit"]
+            },
+            "expected_output": "CONTAINS - Order format should be:",
+            "expected_return": 0
+        },
+        {
+            "name": "Invalid format (missing x)",
+            "description": "Test with a missing 'x' before quantity",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["regina M 3", "exit"]
+            },
+            "expected_output": "CONTAINS - format",
+            "expected_return": 0
+        },
+        {
+            "name": "Invalid format (missing size)",
+            "description": "Test with a missing size parameter",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["regina x2", "exit"]
+            },
+            "expected_output": "CONTAINS - format",
+            "expected_return": 0
+        },
+        {
+            "name": "Invalid format (empty order)",
+            "description": "Test with an empty order",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "2", "5", "2000"],
+                "commands": ["", "exit"]
+            },
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Valid order (single pizza)",
+            "description": "Test with a valid single pizza order",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["regina M x2", "exit"]
+            },
+            "expected_output": "CONTAINS - regina M x2",
+            "expected_return": 0
+        },
+        {
+            "name": "Valid order (multiple pizzas)",
+            "description": "Test with multiple valid pizza orders",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["regina M x2; margarita L x1; americana XL x3", "exit"]
+            },
+            "expected_output": "CONTAINS - regina M x2",
+            "expected_return": 0
+        },
+        {
+            "name": "Mixed valid and invalid orders",
+            "description": "Test with a mix of valid and invalid orders",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["regina M x2; pepperoni L x1; americana XL x3", "exit"]
+            },
+            "expected_output": "CONTAINS - Unknown pizza type",
+            "expected_return": 0
+        },
+        {
+            "name": "Case insensitivity (type)",
+            "description": "Test that pizza type is case insensitive",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["REGINA M x2; margarita L x1; AmErIcAnA XL x3", "exit"]
+            },
+            "expected_output": "CONTAINS - REGINA M x2",
+            "expected_return": 0
+        },
+        {
+            "name": "Case insensitivity (size)",
+            "description": "Test that pizza size is case insensitive",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["regina m x2; margarita L x1; americana xl x3", "exit"]
+            },
+            "expected_output": "CONTAINS - Invalid size:",
+            "expected_return": 0
+        },
+        {
+            "name": "Valid command (help)",
+            "description": "Test the help command",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["help", "exit"]
+            },
+            "expected_output": "CONTAINS - Welcome",
+            "expected_return": 0
+        },
+        {
+            "name": "Valid command (status)",
+            "description": "Test the status command",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["status", "exit"]
+            },
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        }
+    ]
+}

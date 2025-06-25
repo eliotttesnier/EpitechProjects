@@ -1,0 +1,70 @@
+{
+    "tests": [
+        {
+            "name": "Status with no orders",
+            "description": "Test the status command with no orders",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["status", "exit"]
+            },
+            "expected_output": "CONTAINS - No active kitchens.",
+            "expected_return": 0
+        },
+        {
+            "name": "Status with normally 5 kitchens",
+            "description": "Test the status command with 5 kitchens",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["regina M x50", "WAIT 5", "status", "WAIT 10", "exit"]
+            },
+            "expected_output": "CONTAINS - Kitchen #5",
+            "expected_return": 0
+        },
+        {
+            "name": "Order with regina M x1",
+            "description": "Test the regina",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["regina M x1", "WAIT 2",  "exit"]
+            },
+            "expected_output": "CONTAINS - ORDER COMPLETE: Order #1: Regina M x1",
+            "expected_return": 0
+        },
+        {
+            "name": "Order with margarita M x1",
+            "description": "Test the margarita",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["margarita M x1", "WAIT 2",  "exit"]
+            },
+            "expected_output": "CONTAINS - ORDER COMPLETE: Order #1: Margarita M x1",
+            "expected_return": 0
+        },
+        {
+            "name": "Order with americana M x1",
+            "description": "Test the americana",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["americana M x1", "WAIT 2",  "exit"]
+            },
+            "expected_output": "CONTAINS - ORDER COMPLETE: Order #1: Americana M x1",
+            "expected_return": 0
+        },
+        {
+            "name": "Order with fantasia M x1",
+            "description": "Test the fantasia",
+            "input": {
+                "tty_mode": true,
+                "program": ["./plazza", "0.5", "5", "2000"],
+                "commands": ["fantasia M x1", "WAIT 4",  "exit"]
+            },
+            "expected_output": "CONTAINS - ORDER COMPLETE: Order #1: Fantasia M x1",
+            "expected_return": 0
+        }
+    ]
+}

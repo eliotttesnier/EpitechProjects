@@ -1,0 +1,4 @@
+/home/tesniereliott/delivery/tek2/Projects/CCP/B-CCP-400-NAN-4-1-theplazza-eliott.tesnier/bonus/my-build-release/CMakeFiles/plazza.dir
+/home/tesniereliott/delivery/tek2/Projects/CCP/B-CCP-400-NAN-4-1-theplazza-eliott.tesnier/bonus/my-build-release/CMakeFiles/edit_cache.dir
+/home/tesniereliott/delivery/tek2/Projects/CCP/B-CCP-400-NAN-4-1-theplazza-eliott.tesnier/bonus/my-build-release/CMakeFiles/rebuild_cache.dir
+/home/tesniereliott/delivery/tek2/Projects/CCP/B-CCP-400-NAN-4-1-theplazza-eliott.tesnier/bonus/my-build-release/CMakeFiles/plazza_autogen.dir
