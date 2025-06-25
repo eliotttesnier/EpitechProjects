@@ -1,0 +1,8 @@
+{
+    "output_folder": "tests/functional/outputs/",
+    "tests_folder": "tests/functional/tests/",
+    "files": [
+        "arguments",
+        "fileParsing"
+    ]
+}

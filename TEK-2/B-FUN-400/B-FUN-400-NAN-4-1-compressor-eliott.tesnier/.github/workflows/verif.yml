@@ -1,0 +1,111 @@
+name: Verif
+
+env:
+  EXECUTABLES: "imageCompressor"
+
+on:
+  push
+
+jobs:
+
+  check_coding_style:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/epitech/coding-style-checker:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run coding style
+        run: check.sh $(pwd) $(pwd)
+
+      - name: Check error
+        run: |
+          while IFS= read -r line; do
+            file=$(echo "$line" | cut -d ':' -f 1)
+            line_number=$(echo "$line" | cut -d ':' -f 2)
+            error_message=$(echo "$line" | cut -d ':' -f 3-)
+            echo "::error file=$file,line=$line_number::Coding style error: $error_message"
+          done < coding-style-reports.log
+
+      - name: Exit if found
+        run: |
+          if [ -s coding-style-reports.log ]; then
+            echo "Coding style error"
+            exit 1
+          fi
+
+  check_program_compilation:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Stack environment
+        run: |
+          export HOME=/tmp/stack-home
+          mkdir -p $HOME
+          chmod 777 $HOME
+          stack setup --allow-different-user
+          stack update --allow-different-user
+
+      - name: make
+        timeout-minutes: 2
+        env:
+          HOME: /tmp/stack-home
+        run: make
+
+      - name: clean
+        env:
+          HOME: /tmp/stack-home
+        run: make clean
+
+      - name: verif exec
+        run: |
+          if [ ! -x "$EXECUTABLES" ]; then
+            echo "$EXECUTABLES is not executable"
+            exit 1
+          fi
+
+  run_functional_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: epitechcontent/epitest-docker
+    needs: check_program_compilation
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Stack environment
+        run: |
+          export HOME=/tmp/stack-home
+          mkdir -p $HOME
+          chmod 777 $HOME
+          stack setup --allow-different-user
+          stack update --allow-different-user
+
+      - name: Build
+        env:
+          HOME: /tmp/stack-home
+        run: make
+
+      - name: Run functional tests
+        env:
+          HOME: /tmp/stack-home
+        run: |
+          make functional_tests
+          if [ $? -ne 0 ]; then
+            echo "Functional tests failed"
+            exit 1
+          fi

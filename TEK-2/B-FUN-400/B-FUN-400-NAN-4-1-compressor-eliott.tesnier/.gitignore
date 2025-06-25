@@ -1,0 +1,38 @@
+# Stack build files
+.stack-work/
+stack.yaml.lock
+
+# Haskell compilation files
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+*.chi
+*.chs.h
+*.eventlog
+
+# Binary files
+imageCompressor
+
+# Cabal files
+dist/
+dist-newstyle/
+cabal.project.local
+.ghc.environment.*
+
+# IDE/Editor files
+.vscode/
+src/Main
+
+# Notes
+notes.md
+
+# Example files
+exampleIn.txt
+in.txt
+*.png
+*.jpg
+*.jpeg
+
+# Coding style report
+*.log

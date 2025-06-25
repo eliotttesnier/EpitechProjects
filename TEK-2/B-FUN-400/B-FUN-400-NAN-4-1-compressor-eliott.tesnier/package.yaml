@@ -1,0 +1,36 @@
+name: imageCompressor
+version: 0.1.0.0
+dependencies:
+- base >= 4.7 && < 5
+- random >= 1.2.0
+- parallel >= 3.2.0
+- containers >= 0.6.0
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Error
+  - Validators
+  - Config
+  - FileParsing
+  - Distance
+  - Centroids
+  - Clustering
+
+executables:
+  imageCompressor:
+    main: Main.hs
+    source-dirs: src
+    ghc-options:
+    - -Wall
+    - -Wcompat
+    dependencies:
+    - imageCompressor
+
+tests:
+  imageCompressor-test:
+    main: test.hs
+    source-dirs: tests
+    dependencies:
+    - imageCompressor
+    - hspec >= 2.7.1

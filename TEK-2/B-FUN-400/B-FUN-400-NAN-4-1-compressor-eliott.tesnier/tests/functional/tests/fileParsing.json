@@ -1,0 +1,25 @@
+{
+    "tests": [
+        {
+            "name": "Valid file",
+            "description": "Test the program with a valid file",
+            "input": "./imageCompressor -n 8 -l 0.2 -f tests/functional/exampleFiles/validFile.txt",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Empty file",
+            "description": "Test the program with an empty file",
+            "input": "./imageCompressor -n 8 -l 0.2 -f tests/functional/exampleFiles/emptyFile.txt",
+            "expected_output": "Error: Invalid -n.",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid file",
+            "description": "Test the program with an invalid file",
+            "input": "./imageCompressor -n 8 -l 0.2 -f tests/functional/exampleFiles/invalidFile.txt",
+            "expected_output": "Error: Invalid file content.",
+            "expected_return": 84
+        }
+    ]
+}

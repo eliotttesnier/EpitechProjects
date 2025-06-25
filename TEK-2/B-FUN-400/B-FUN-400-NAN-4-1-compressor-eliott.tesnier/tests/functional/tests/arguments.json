@@ -1,0 +1,95 @@
+{
+    "tests": [
+        {
+            "name": "No arguments",
+            "description": "Test the program with no arguments",
+            "input": "./imageCompressor",
+            "expected_output": "Error: No arguments provided.",
+            "expected_return": 84
+        },
+        {
+            "name": "Not all arguments",
+            "description": "Test the program with not all arguments",
+            "input": "./imageCompressor -n 8 -l 0.2",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Unkown argument",
+            "description": "Test the program with an unknown argument",
+            "input": "./imageCompressor -n 8 -l 0.2 -f in -z",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -n (No data)",
+            "description": "Test the program with a badly formatted -n",
+            "input": "./imageCompressor -n -l 0.2 -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -n (Alphabetic data)",
+            "description": "Test the program with a badly formatted -n",
+            "input": "./imageCompressor -n abc -l 0.2 -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -n (Negative data)",
+            "description": "Test the program with a badly formatted -n",
+            "input": "./imageCompressor -n -5 -l 0.2 -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -n (Zero data)",
+            "description": "Test the program with a badly formatted -n",
+            "input": "./imageCompressor -n 0 -l 0.2 -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -n (Float data)",
+            "description": "Test the program with a badly formatted -n",
+            "input": "./imageCompressor -n 0.5 -l 0.2 -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -l (No data)",
+            "description": "Test the program with a badly formatted -l",
+            "input": "./imageCompressor -n 0.5 -l -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -l (Alphabetic data)",
+            "description": "Test the program with a badly formatted -l",
+            "input": "./imageCompressor -n 0.5 -l abc -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -l (Negative data)",
+            "description": "Test the program with a badly formatted -l",
+            "input": "./imageCompressor -n 0.5 -l -5 -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -l (Zero data)",
+            "description": "Test the program with a badly formatted -l",
+            "input": "./imageCompressor -n 0.5 -l 0 -f in",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        },
+        {
+            "name": "Badly formatted -f (No data)",
+            "description": "Test the program with a badly formatted -l",
+            "input": "./imageCompressor -n 0.5 -l 0.2 -f",
+            "expected_output": "Error: Invalid arguments.",
+            "expected_return": 84
+        }
+    ]
+}
