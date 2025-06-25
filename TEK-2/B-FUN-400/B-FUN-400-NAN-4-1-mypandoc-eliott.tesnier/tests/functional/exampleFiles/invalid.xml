@@ -1,0 +1,6 @@
+<document>
+  <header title="Test Document">
+    <author>John Doe</author>
+  <body>
+    <paragraph>Ce texte ne sera pas parsé correctement</paragraph>
+</document>

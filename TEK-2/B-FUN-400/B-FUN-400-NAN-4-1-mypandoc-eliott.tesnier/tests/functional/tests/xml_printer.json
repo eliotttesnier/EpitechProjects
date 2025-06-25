@@ -1,0 +1,11 @@
+{
+    "tests": [
+        {
+            "name": "XML Printer - Syntaxe Exampke",
+            "description": "Test the xml printer with the syntax example given",
+            "input": "./mypandoc -i tests/functional/exampleFiles/syntaxe.json -f xml",
+            "expected_output": "FILE CONTENT - jsonToXml.xml",
+            "expected_return": 0
+        }
+    ]
+}

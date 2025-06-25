@@ -1,0 +1,53 @@
+{
+    "tests": [
+        {
+            "name": "JSON Parser - Empty Document",
+            "description": "Test parsing empty JSON document",
+            "input": "./mypandoc -i tests/functional/exampleFiles/empty.json -f markdown",
+            "expected_output": "---title: Untitled Document---",
+            "expected_return": 0
+        },
+        {
+            "name": "JSON Parser - Basic Header",
+            "description": "Test parsing document with header only",
+            "input": "./mypandoc -i tests/functional/exampleFiles/header.json -f markdown",
+            "expected_output": "---title: Test Documentauthor: John Doedate: 2024---",
+            "expected_return": 0
+        },
+        {
+            "name": "JSON Parser - Section Levels",
+            "description": "Test parsing nested sections with correct levels",
+            "input": "./mypandoc -i tests/functional/exampleFiles/sections.json -f markdown",
+            "expected_output": "---title: Untitled Document---# Level 1## Level 2",
+            "expected_return": 0
+        },
+        {
+            "name": "JSON Parser - Formatting",
+            "description": "Test parsing text formatting",
+            "input": "./mypandoc -i tests/functional/exampleFiles/formatting.json -f markdown",
+            "expected_output": "---title: Untitled Document---**bold text** and *italic text* and `code`",
+            "expected_return": 0
+        },
+        {
+            "name": "JSON Parser - Lists",
+            "description": "Test parsing lists",
+            "input": "./mypandoc -i tests/functional/exampleFiles/list.json -f markdown",
+            "expected_output": "---title: Untitled Document---- item 1- item 2",
+            "expected_return": 0
+        },
+        {
+            "name": "JSON Parser - Links and Images",
+            "description": "Test parsing links and images",
+            "input": "./mypandoc -i tests/functional/exampleFiles/media.json -f markdown",
+            "expected_output": "---title: Untitled Document---[link](http://test.com)![alt](img.png)",
+            "expected_return": 0
+        },
+        {
+            "name": "JSON Parser - Invalid JSON",
+            "description": "Test parsing invalid JSON",
+            "input": "./mypandoc -i tests/functional/exampleFiles/invalid.json -f markdown",
+            "expected_output": "Error: Failed to parse document",
+            "expected_return": 84
+        }
+    ]
+}

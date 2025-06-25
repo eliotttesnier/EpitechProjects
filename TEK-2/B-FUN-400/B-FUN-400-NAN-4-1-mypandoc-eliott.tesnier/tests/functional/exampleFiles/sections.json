@@ -1,0 +1,16 @@
+{
+    "body": [
+        {
+            "section": {
+                "title": "Level 1",
+                "content": [
+                    {
+                        "section": {
+                            "title": "Level 2"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

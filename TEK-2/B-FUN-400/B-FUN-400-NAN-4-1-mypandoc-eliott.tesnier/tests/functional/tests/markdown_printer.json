@@ -1,0 +1,11 @@
+{
+    "tests": [
+        {
+            "name": "MARKDOWN Printer - Syntaxe Exampke",
+            "description": "Test the markdown printer with the syntax example given",
+            "input": "./mypandoc -i tests/functional/exampleFiles/syntaxe.json -f markdown",
+            "expected_output": "FILE CONTENT - jsonToMarkdown.md",
+            "expected_return": 0
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+  "header": {
+    "title": "Sample Document",
+    "author": "John Doe",
+    "date": "2025-01-01"
+  },
+  "body": [
+    [
+      "This is a plain text example."
+    ],
+    [
+      { "bold": "This text is bold." }
+    ],
+    [
+      { "italic": "This text is italic." }
+    ],
+    [
+      { "code": "print('Hello, World!')" }
+    ],
+    [
+      { "link": { "url": "https://docs.google.com/presentation/d/1mCYoEoATJvJ7WIX0fb7eTLYwE6M0r7sQHqDZlG06YVo/present?token=AC4w5Vh3zGFTWL2HPCKvC7_6Jh7TnhRu_A:1604875742839&includes_info_params=1&eisi=COjZvoSE9OwCFQXOOgcd95EAeg#slide=id.ga8c6825146_0_14", "content": ["Epitech"] } }
+    ],
+    [
+      { "image": { "url": "https://www.myenglishworld.org/wp-content/uploads/2020/05/meme-08.jpg", "alt": ["Epitech Logo"] } }
+    ],
+    [
+      "This is a paragraph with ",
+      { "bold": "bold" },
+      "and ",
+      { "italic": "italic" },
+      "text.\n        "
+    ],
+    {
+      "section": {
+        "title": "Introduction",
+        "content": [
+          [
+            "This is the introduction section."
+          ]
+        ]
+      }
+    },
+    {
+      "codeblock": [
+          "def hello():\n                print('Hello, World!')\n            "
+      ]
+    },
+    {
+      "list": [
+        [
+          "First item"
+        ],
+        [
+          "Second item"
+        ],
+        [
+          "Third item"
+        ]
+      ]
+    }
+  ]
+}

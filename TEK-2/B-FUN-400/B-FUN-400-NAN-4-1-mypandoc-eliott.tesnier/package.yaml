@@ -1,0 +1,27 @@
+name: mypandoc
+version: 0.1.0.0
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  mypandoc:
+    main: Main.hs
+    source-dirs: src
+    ghc-options:
+    - -Wall
+    - -Wcompat
+    dependencies:
+    - mypandoc
+
+tests:
+  mypandoc-test:
+    main: test.hs
+    source-dirs: tests
+    dependencies:
+    - mypandoc
+    - hspec >= 2.7.1
+    - directory
+    - filepath

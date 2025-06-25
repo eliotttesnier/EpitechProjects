@@ -1,0 +1,74 @@
+{
+    "tests": [
+        {
+            "name": "XML Parser - Empty Document",
+            "description": "Test parsing empty XML document",
+            "input": "./mypandoc -i tests/functional/exampleFiles/empty.xml -f markdown -e xml",
+            "expected_output": "---title: Untitled Document---",
+            "expected_return": 0
+        },
+        {
+            "name": "XML Parser - Basic Header",
+            "description": "Test parsing XML document with header only",
+            "input": "./mypandoc -i tests/functional/exampleFiles/header.xml -f markdown -e xml",
+            "expected_output": "---title: Test Documentauthor: John Doedate: 2024---",
+            "expected_return": 0
+        },
+        {
+            "name": "XML Parser - Section Levels",
+            "description": "Test parsing nested sections with correct levels in XML",
+            "input": "./mypandoc -i tests/functional/exampleFiles/sections.xml -f markdown -e xml",
+            "expected_output": "---title: Untitled Document---# Level 1## Level 2",
+            "expected_return": 0
+        },
+        {
+            "name": "XML Parser - Formatting",
+            "description": "Test parsing text formatting in XML",
+            "input": "./mypandoc -i tests/functional/exampleFiles/formatting.xml -f markdown -e xml",
+            "expected_output": "---title: Untitled Document---**bold text** and *italic text* and `code`",
+            "expected_return": 0
+        },
+        {
+            "name": "XML Parser - Lists",
+            "description": "Test parsing lists in XML",
+            "input": "./mypandoc -i tests/functional/exampleFiles/list.xml -f markdown -e xml",
+            "expected_output": "---title: Untitled Document---- item 1- item 2",
+            "expected_return": 0
+        },
+        {
+            "name": "XML Parser - Links and Images",
+            "description": "Test parsing links and images in XML",
+            "input": "./mypandoc -i tests/functional/exampleFiles/media.xml -f markdown -e xml",
+            "expected_output": "---title: Untitled Document---[link](http://test.com) ![alt](img.png)",
+            "expected_return": 0
+        },
+        {
+            "name": "XML Parser - Invalid XML",
+            "description": "Test parsing invalid XML document",
+            "input": "./mypandoc -i tests/functional/exampleFiles/invalid.xml -f markdown -e xml",
+            "expected_output": "Error: Failed to parse document",
+            "expected_return": 84
+        },
+        {
+            "name": "XML Parser - Code Block",
+            "description": "Test parsing XML code block",
+            "input": "./mypandoc -i tests/functional/exampleFiles/codeblock.xml -f markdown -e xml",
+            "expected_output": "---title: Untitled Document---```print(\"Hello World\")```",
+            "expected_return": 0
+        },
+        {
+            "name": "XML to JSON Conversion",
+            "description": "Test converting XML to JSON format",
+            "input": "./mypandoc -i tests/functional/exampleFiles/syntaxe.xml -f json -e xml",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "XML to XML Conversion",
+            "description": "Test converting XML to XML format (identity)",
+            "input": "./mypandoc -i tests/functional/exampleFiles/syntaxe.xml -f xml -e xml",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        }
+    ]
+}

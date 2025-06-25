@@ -1,0 +1,5 @@
+<document>
+  <body>
+    <paragraph><link url="http://test.com">link</link><image url="img.png">alt</image></paragraph>
+  </body>
+</document>

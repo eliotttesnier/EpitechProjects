@@ -1,0 +1,17 @@
+{
+    "body": [
+        [
+            {
+                "bold": "bold text"
+            },
+            " and ",
+            {
+                "italic": "italic text"
+            },
+            " and ",
+            {
+                "code": "code"
+            }
+        ]
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "body": [
+        [
+            {
+                "link": {
+                    "url": "http://test.com",
+                    "content": "link"
+                }
+            },
+            {
+                "image": {
+                    "url": "img.png",
+                    "alt": ["alt"]
+                }
+            }
+        ]
+    ]
+}

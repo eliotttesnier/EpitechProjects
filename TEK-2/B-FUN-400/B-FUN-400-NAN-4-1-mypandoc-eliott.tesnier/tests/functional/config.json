@@ -1,0 +1,11 @@
+{
+    "output_folder": "tests/functional/outputs/",
+    "tests_folder": "tests/functional/tests/",
+    "files": [
+        "arguments",
+        "xml_parser",
+        "json_parser",
+        "markdown_printer",
+        "xml_printer"
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "tests": [
+        {
+            "name": "No arguments",
+            "description": "Test the program with no arguments",
+            "input": "./mypandoc",
+            "expected_output": "Error: ExitFailure 84USAGE: ./mypandoc -i ifile -f oformat [-o ofile] [-e iformat]\tifile       path to the file to convert\toformat     output format (xml, json, markdown)\tofile       path to the output file\tiformat     input format (xml, json, markdown)",
+            "expected_return": 84
+        },
+        {
+            "name": "Missing input file",
+            "description": "Test missing -i argument",
+            "input": "./mypandoc -f markdown",
+            "expected_output": "Error: ExitFailure 84USAGE: ./mypandoc -i ifile -f oformat [-o ofile] [-e iformat]\tifile       path to the file to convert\toformat     output format (xml, json, markdown)\tofile       path to the output file\tiformat     input format (xml, json, markdown)Error: Missing required argument: -i",
+            "expected_return": 84
+        },
+        {
+            "name": "Missing output format",
+            "description": "Test missing -f argument",
+            "input": "./mypandoc -i tests/functional/exampleFiles/test.json",
+            "expected_output": "Error: ExitFailure 84USAGE: ./mypandoc -i ifile -f oformat [-o ofile] [-e iformat]\tifile       path to the file to convert\toformat     output format (xml, json, markdown)\tofile       path to the output file\tiformat     input format (xml, json, markdown)Error: Missing required argument: -f",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid input file",
+            "description": "Test with non-existent input file",
+            "input": "./mypandoc -i nonexistent.json -f markdown",
+            "expected_output": "Error: ExitFailure 84USAGE: ./mypandoc -i ifile -f oformat [-o ofile] [-e iformat]\tifile       path to the file to convert\toformat     output format (xml, json, markdown)\tofile       path to the output file\tiformat     input format (xml, json, markdown)Error: File not found: nonexistent.json",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid input extension",
+            "description": "Test with invalid input file extension",
+            "input": "./mypandoc -i invalid.txt -f markdown",
+            "expected_output": "Error: ExitFailure 84USAGE: ./mypandoc -i ifile -f oformat [-o ofile] [-e iformat]\tifile       path to the file to convert\toformat     output format (xml, json, markdown)\tofile       path to the output file\tiformat     input format (xml, json, markdown)Error: File not found: invalid.txt",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid output format",
+            "description": "Test with invalid output format",
+            "input": "./mypandoc -i tests/functional/exampleFiles/test.json -f invalid",
+            "expected_output": "Error: ExitFailure 84USAGE: ./mypandoc -i ifile -f oformat [-o ofile] [-e iformat]\tifile       path to the file to convert\toformat     output format (xml, json, markdown)\tofile       path to the output file\tiformat     input format (xml, json, markdown)Error: Invalid output format: invalid (must be xml, json, or markdown)",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid output extension",
+            "description": "Test with invalid output file extension",
+            "input": "./mypandoc -i tests/functional/exampleFiles/test.json -f markdown -o output.txt",
+            "expected_output": "Error: Failed to parse document",
+            "expected_return": 84
+        },
+        {
+            "name": "Invalid input format",
+            "description": "Test with invalid input format",
+            "input": "./mypandoc -i tests/functional/exampleFiles/test.json -f markdown -e invalid",
+            "expected_output": "Error: ExitFailure 84USAGE: ./mypandoc -i ifile -f oformat [-o ofile] [-e iformat]\tifile       path to the file to convert\toformat     output format (xml, json, markdown)\tofile       path to the output file\tiformat     input format (xml, json, markdown)Error: Invalid input format: invalid (must be xml, json, or markdown)",
+            "expected_return": 84
+        },
+        {
+            "name": "Valid required arguments only",
+            "description": "Test with valid required arguments only",
+            "input": "./mypandoc -i tests/functional/exampleFiles/syntaxe.json -f markdown",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "All valid arguments",
+            "description": "Test with all valid arguments",
+            "input": "./mypandoc -i tests/functional/exampleFiles/syntaxe.json -f markdown -o output.md -e json",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        },
+        {
+            "name": "Valid arguments in different order",
+            "description": "Test with valid arguments in different order",
+            "input": "./mypandoc -f markdown -i tests/functional/exampleFiles/syntaxe.json -e json -o output.md",
+            "expected_output": "ANYTHING",
+            "expected_return": 0
+        }
+    ]
+}

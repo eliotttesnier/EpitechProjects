@@ -1,0 +1,30 @@
+<document>
+    <header title="Sample Document">
+        <author>John Doe</author>
+        <date>2025-01-01</date>
+    </header>
+    <body>
+        <paragraph>This is a plain text example.</paragraph>
+        <paragraph><bold>This text is bold.</bold></paragraph>
+        <paragraph><italic>This text is italic.</italic></paragraph>
+        <paragraph><code>print('Hello, World!')</code></paragraph>
+        <paragraph><link url="https://docs.google.com/presentation/d/1mCYoEoATJvJ7WIX0fb7eTLYwE6M0r7sQHqDZlG06YVo/present?token=AC4w5Vh3zGFTWL2HPCKvC7_6Jh7TnhRu_A:1604875742839&includes_info_params=1&eisi=COjZvoSE9OwCFQXOOgcd95EAeg#slide=id.ga8c6825146_0_14">Epitech</link></paragraph>
+        <paragraph><image url="https://www.myenglishworld.org/wp-content/uploads/2020/05/meme-08.jpg">Epitech Logo</image></paragraph>
+        <paragraph>
+            This is a paragraph with <bold>bold</bold> and <italic>italic</italic> text.
+        </paragraph>
+        <section title="Introduction">
+            <paragraph>This is the introduction section.</paragraph>
+        </section>
+        <codeblock>
+            <paragraph>def hello():
+                print('Hello, World!')
+            </paragraph>
+        </codeblock>
+        <list>
+            <paragraph>First item</paragraph>
+            <paragraph>Second item</paragraph>
+            <paragraph>Third item</paragraph>
+        </list>
+    </body>
+</document>

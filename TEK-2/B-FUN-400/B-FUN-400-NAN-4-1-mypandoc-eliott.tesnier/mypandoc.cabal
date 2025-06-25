@@ -1,0 +1,70 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           mypandoc
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Document
+      Main
+      Parser.Parser
+      Parser.ParserGlobal
+      Parser.ParserJSON
+      Parser.ParserXML
+      ParsingCLI
+      Printers.JsonPrinter
+      Printers.MarkdownPrinter
+      Printers.XmlPrinter
+  other-modules:
+      Paths_mypandoc
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable mypandoc
+  main-is: Main.hs
+  other-modules:
+      Document
+      Parser.Parser
+      Parser.ParserGlobal
+      Parser.ParserJSON
+      Parser.ParserXML
+      ParsingCLI
+      Printers.JsonPrinter
+      Printers.MarkdownPrinter
+      Printers.XmlPrinter
+      Paths_mypandoc
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat
+  build-depends:
+      base >=4.7 && <5
+    , mypandoc
+  default-language: Haskell2010
+
+test-suite mypandoc-test
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  other-modules:
+      ParsingCLISpec
+      ParsingJSONSpec
+      ParsingXMLSpec
+      PrinterMDSpec
+      PrinterXMLSpec
+      Paths_mypandoc
+  hs-source-dirs:
+      tests
+  build-depends:
+      base >=4.7 && <5
+    , directory
+    , filepath
+    , hspec >=2.7.1
+    , mypandoc
+  default-language: Haskell2010
